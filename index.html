@@ -7,6 +7,7 @@
   <meta name="description" content="岁华可忆，五八回忆录——把青春里的微光，收藏成可以再次打开的故事。">
   <title>岁华可忆 · 五八回忆录</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="memoir-additions.css">
 </head>
 <body class="home-page">
   <div class="ambient ambient-one"></div>
@@ -14,19 +15,16 @@
   <div class="grain"></div>
   <canvas class="particle-canvas" aria-hidden="true"></canvas>
   <div class="light-beam light-beam-one"></div><div class="light-beam light-beam-two"></div>
-
   <audio id="bg-music" loop preload="metadata"></audio>
-
   <header class="topbar">
     <a class="brand" href="index.html" aria-label="返回首页">
       <span class="brand-mark">忆</span>
-      <span class="brand-copy"><strong>岁华可忆</strong><small>FIFTY-EIGHT · MEMORY ARCHIVE</small></span>
+      <span class="brand-copy"><strong>岁华可忆</strong></span>
     </a>
     <nav class="top-actions">
       <button class="theme-toggle" type="button" aria-label="切换深浅色模式" title="切换深浅色模式">
         <span class="theme-icon theme-sun">☼</span><span class="theme-icon theme-moon">☾</span><span class="toggle-knob"></span>
       </button>
-
       <div class="music-widget">
         <button class="music-toggle" type="button" aria-label="打开音乐菜单" title="音乐" aria-expanded="false" aria-haspopup="true">
           <span class="music-icon">♪</span>
@@ -40,57 +38,84 @@
           </button>
         </div>
       </div>
-
-      <a class="nav-link" href="index_0.html">原版页面 <span>↗</span></a>
       <a class="nav-link" href="about.html">关于 <span>↗</span></a>
     </nav>
   </header>
 
-  <main class="hero">
-    <section class="intro">
-      <div class="eyebrow"><span class="eyebrow-dot"></span> TO THE DAYS WE SHARED</div>
-      <p class="overline">青春不散场，只是换一种方式收藏。</p>
-      <h1>岁华<span>可忆</span><i>，</i><br>五八回忆录<span class="title-period">。</span></h1>
-      <p class="lead">那些一起走过的日子，<br class="desktop-break">值得被认真记住。</p>
-      <p class="description">写下当时没说出口的话，放进那些闪闪发光的瞬间。<br>等很多年以后，再一起翻开这本属于我们的青春。</p>
-      <a class="enter-button" href="https://class-forum-17468.app.workbuddy.host/">
-        <span class="button-icon">✳</span><span>打开五八回忆录</span><span class="button-arrow">↗</span>
+  <main>
+    <section class="hero" id="home">
+      <section class="intro">
+        <div class="eyebrow"><span class="eyebrow-dot"></span> TO THE DAYS WE SHARED</div>
+        <p class="overline">青春不散场，只是换一种方式收藏。</p>
+        <h1>岁华<span>可忆</span><i>，</i><br>五八回忆录<span class="title-period">。</span></h1>
+        <p class="lead">那些一起走过的日子，<br class="desktop-break">值得被认真记住。</p>
+        <p class="description">写下当时没说出口的话，放进那些闪闪发光的瞬间。<br>等很多年以后，再一起翻开这本属于我们的青春。</p>
+        <a class="enter-button" href="https://class-forum-17468.app.workbuddy.host/" target="_blank" rel="noopener noreferrer">
+          <span class="button-icon">✳</span><span>打开五八回忆录</span><span class="button-arrow">↗</span>
+        </a>
+        <div class="interaction-hint"><span class="hint-pulse"></span> 轻触光点，让回忆泛起涟漪</div>
+        <div class="micro-note"><span class="tiny-line"></span> 一起写下的故事，值得被一直珍藏</div>
+      <a class="scroll-guide" href="#letters" aria-label="向下阅读青春回忆文字页" title="向下探索">
+        <span class="scroll-guide-text">向下探索</span>
+        <span class="scroll-chevron-stack" aria-hidden="true">
+          <span class="scroll-chevron"></span>
+          <span class="scroll-chevron"></span>
+          <span class="scroll-chevron"></span>
+        </span>
       </a>
-      <div class="interaction-hint"><span class="hint-pulse"></span> 轻触光点，让回忆泛起涟漪</div>
-      <div class="micro-note"><span class="tiny-line"></span> 一起写下的故事，值得被一直珍藏</div>
+      </section>
 
-      <div class="scroll-guide" aria-hidden="true">
-        <div class="scroll-ripple"></div>
-        <div class="scroll-ripple delay"></div>
-        <span class="scroll-arrow">↓</span>
-        <span class="scroll-label">向下滑动</span>
-      </div>
+      <section class="visual" aria-label="青春回忆的动态视觉装饰">
+        <div class="visual-caption caption-top"><span>OUR LITTLE UNIVERSE</span><span>01 / FOREVER</span></div>
+        <div class="orbit orbit-a"></div><div class="orbit orbit-b"></div><div class="orbit orbit-c"></div>
+        <div class="sun-glow"></div>
+        <div class="memory-card card-back">
+          <div class="card-topline"><span>FIELD NOTES</span><span>05.28</span></div>
+          <div class="scribble">那些年<br>我们一起</div>
+          <div class="card-bottom"><span>留在夏天里的回声</span><span>✳</span></div>
+        </div>
+        <div class="memory-card card-front">
+          <div class="photo-placeholder">
+            <div class="photo-sky"></div><div class="photo-sun"></div>
+            <div class="hill hill-back"></div><div class="hill hill-front"></div>
+            <div class="photo-grain"></div>
+            <span class="photo-label">SUMMER, SOMEWHERE</span>
+            <span class="photo-stamp">青春<br>存档中</span>
+          </div>
+          <div class="card-quote">“我们曾在同一片天空下，<br>把普通的日子过成闪光的回忆。”</div>
+          <div class="card-meta"><span>五八 · 青春纪念册</span><span>♥</span></div>
+        </div>
+        <div class="floating-note note-one"><span class="note-star">✳</span><span>那些闪闪发光的<br>小小日常</span></div>
+        <div class="floating-note note-two"><span class="note-number">∞</span><span>留给未来的<br>一封信</span></div>
+        <div class="spark spark-one">✦</div><div class="spark spark-two">✧</div><div class="spark spark-three">✳</div>
+        <div class="visual-caption caption-bottom"><span>COLLECT THE MOMENTS</span><span>MEMORIES NEVER FADE</span></div>
+      </section>
+
     </section>
 
-    <section class="visual" aria-label="青春回忆的动态视觉装饰">
-      <div class="visual-caption caption-top"><span>OUR LITTLE UNIVERSE</span><span>01 / FOREVER</span></div>
-      <div class="orbit orbit-a"></div><div class="orbit orbit-b"></div><div class="orbit orbit-c"></div>
-      <div class="sun-glow"></div>
-      <div class="memory-card card-back">
-        <div class="card-topline"><span>FIELD NOTES</span><span>05.28</span></div>
-        <div class="scribble">那些年<br>我们一起</div>
-        <div class="card-bottom"><span>留在夏天里的回声</span><span>✳</span></div>
-      </div>
-      <div class="memory-card card-front">
-        <div class="photo-placeholder">
-          <div class="photo-sky"></div><div class="photo-sun"></div>
-          <div class="hill hill-back"></div><div class="hill hill-front"></div>
-          <div class="photo-grain"></div>
-          <span class="photo-label">SUMMER, SOMEWHERE</span>
-          <span class="photo-stamp">青春<br>存档中</span>
+    <section class="letters-page" id="letters" aria-labelledby="letters-title">
+      <div class="letters-inner">
+        <div class="eyebrow"><span class="eyebrow-dot"></span> A LETTER TO OUR YOUTH</div>
+        <p class="letters-kicker">第二页 · 写给一起走过的我们</p>
+        <h2 id="letters-title">后来，<br><span>我们会记得。</span></h2>
+        <div class="letters-divider"><span></span><i>✳</i><span></span></div>
+
+        <article class="letter-copy">
+          <p class="letter-lead">如果多年以后，我们再提起高中，最先想起的，会是什么呢？</p>
+          <p>也许不是某一次考试的分数，也不是试卷上那些曾经让人焦虑的红色批注。我们或许会先想起清晨走进教室时，窗边刚刚落下的阳光；想起课间短短十分钟里没讲完的笑话；想起晚自习结束后，走廊里渐渐远去的脚步声。</p>
+          <p>那时的日子有时很长，长到一节课像是过不完；有时又很短，短到还没来得及好好告别，毕业就已经站在了眼前。我们一边盼着快些长大，一边又在真正要离开的时候，忽然舍不得那些曾经习以为常的日常。</p>
+          <p>谢谢你们，让这段普通的日子变得不普通。谢谢每一次顺手递来的笔、每一句恰到好处的安慰、每一次全班一起笑出声的瞬间。那些小小的、琐碎的、当时并没有特别在意的片段，后来想起时，竟都带着光。</p>
+          <p>从同一间教室出发之后，我们会去往不同的城市，遇见不同的人，开始各自崭新的生活。也许以后很难再有机会让所有人同时坐在一起，也许熟悉的声音会渐渐变得遥远。但这并不意味着故事结束了，只是属于我们的这一章，终于写到了这里。</p>
+          <p>愿未来的我们，仍然保有当年的真诚和热烈。愿我们走过更辽阔的世界之后，依旧记得怎样为一件小事开心，怎样认真地喜欢一个人、一件事、一段生活。愿我们偶尔回头时，能够笑着说：那几年，真好。</p>
+          <p class="letter-ending">青春有期，回忆无价。<br>愿多年以后再相逢，我们仍能认出彼此眼里的那束光。</p>
+        </article>
+
+        <div class="letters-signature">
+          <span>致我们共同拥有的那段夏天</span>
+          <span class="signature-mark">五八 · 2026</span>
         </div>
-        <div class="card-quote">“我们曾在同一片天空下，<br>把普通的日子过成闪光的回忆。”</div>
-        <div class="card-meta"><span>五八 · 青春纪念册</span><span>♥</span></div>
+        <a class="back-to-top" href="#home">↑ 回到第一页</a>
       </div>
-      <div class="floating-note note-one"><span class="note-star">✳</span><span>那些闪闪发光的<br>小小日常</span></div>
-      <div class="floating-note note-two"><span class="note-number">∞</span><span>留给未来的<br>一封信</span></div>
-      <div class="spark spark-one">✦</div><div class="spark spark-two">✧</div><div class="spark spark-three">✳</div>
-      <div class="visual-caption caption-bottom"><span>COLLECT THE MOMENTS</span><span>MEMORIES NEVER FADE</span></div>
     </section>
   </main>
 

@@ -1,0 +1,314 @@
+/* QD58 memoir update: scroll cue + text-only second page */
+.scroll-guide{
+  position:absolute;
+  z-index:4;
+  left:50%;
+  bottom:8px;
+  transform:translateX(-50%);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:7px;
+  width:190px;
+  min-height:88px;
+  color:var(--muted,#718b80);
+  text-decoration:none;
+  font-size:11px;
+  letter-spacing:.08em;
+  text-align:center;
+  isolation:isolate;
+}
+.scroll-guide-text{position:relative;z-index:2;white-space:nowrap}
+.scroll-arrow{
+  position:relative;z-index:2;
+  display:grid;place-items:center;
+  width:30px;height:30px;border-radius:50%;
+  color:#477d70;background:rgba(255,255,255,.62);
+  border:1px solid rgba(85,139,117,.25);
+  box-shadow:0 4px 16px rgba(55,110,96,.1);
+  font-size:19px;line-height:1;
+  animation:guideNudge 1.8s ease-in-out infinite;
+}
+.scroll-ripple{
+  position:absolute;z-index:0;
+  left:50%;bottom:15px;
+  width:38px;height:38px;border-radius:50%;
+  border:1px solid rgba(93,157,132,.55);
+  transform:translateX(-50%) scale(.55);
+  animation:guideRipple 2.6s ease-out infinite;
+  pointer-events:none;
+}
+.scroll-ripple.delay{animation-delay:1.3s}
+.scroll-guide:hover .scroll-arrow{background:#fff;transform:translateY(2px)}
+.hero{position:relative;padding-bottom:115px}
+.letters-page{
+  position:relative;
+  min-height:100vh;
+  padding:clamp(70px,10vh,120px) 24px 80px;
+  background:linear-gradient(145deg,rgba(255,255,250,.72),rgba(237,247,239,.84) 50%,rgba(248,239,223,.82));
+  border-top:1px solid rgba(67,112,93,.12);
+  overflow:hidden;
+  scroll-margin-top:12px;
+}
+.letters-page:before{
+  content:"";
+  position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(ellipse at 50% 0%,rgba(255,255,255,.8),transparent 50%);
+}
+.letters-inner{position:relative;z-index:1;max-width:760px;margin:0 auto}
+.letters-kicker{margin:25px 0 13px;color:#81988c;font-size:12px;letter-spacing:.18em}
+.letters-inner h2{
+  margin:0;
+  font-family:"LXGW WenKai Local","LXGW WenKai",serif;
+  color:#234541;
+  font-size:clamp(42px,6.5vw,72px);
+  font-weight:500;line-height:1.45;letter-spacing:.06em;
+}
+.letters-inner h2 span{color:#6b9c8c}
+.letters-divider{display:flex;align-items:center;gap:14px;width:150px;margin:26px 0 36px;color:#d29577}
+.letters-divider span{height:1px;flex:1;background:rgba(88,135,113,.35)}
+.letters-divider i{font-style:normal;font-size:15px}
+.letter-copy{font-family:"LXGW WenKai Local","LXGW WenKai",serif;font-size:16px;line-height:2.25;letter-spacing:.035em;color:#5e786d}
+.letter-copy p{margin:0 0 23px;text-indent:2em}
+.letter-copy .letter-lead{text-indent:0;font-size:19px;color:#345f53;line-height:2;margin-bottom:28px}
+.letter-copy .letter-ending{text-indent:0;margin-top:35px;padding-top:25px;border-top:1px solid rgba(72,119,97,.2);color:#386c5d;font-size:18px;line-height:2.1}
+.letters-signature{display:flex;justify-content:space-between;align-items:center;gap:18px;margin-top:38px;padding:18px 0;border-top:1px solid rgba(72,119,97,.18);color:#8aa095;font-size:11px;letter-spacing:.1em}
+.signature-mark{color:#d29577;white-space:nowrap}
+.back-to-top{display:inline-flex;align-items:center;gap:8px;margin-top:28px;padding:10px 15px;border:1px solid rgba(57,99,87,.22);border-radius:999px;color:#608778;font-size:12px;transition:background .25s,transform .25s}
+.back-to-top:hover{background:rgba(255,255,255,.6);transform:translateY(-2px)}
+@keyframes guideRipple{0%{opacity:.7;transform:translateX(-50%) scale(.55)}100%{opacity:0;transform:translateX(-50%) scale(2.2)}}
+@keyframes guideNudge{0%,100%{translate:0 0}50%{translate:0 4px}}
+@media(max-width:900px){
+  .hero{padding-bottom:120px}
+  .scroll-guide{bottom:8px}
+}
+@media(max-width:600px){
+  .scroll-guide{bottom:7px;width:100%;min-height:78px;font-size:10px;gap:6px}
+  .scroll-guide-text{white-space:normal}
+  .hero{padding-bottom:112px}
+  .letters-page{padding:60px 7% 55px}
+  .letters-kicker{font-size:10px;letter-spacing:.12em;margin-top:22px}
+  .letters-inner h2{font-size:clamp(39px,10vw,54px)}
+  .letters-divider{margin:21px 0 28px}
+  .letter-copy{font-size:14px;line-height:2.15}
+  .letter-copy .letter-lead{font-size:17px}
+  .letter-copy .letter-ending{font-size:16px}
+  .letters-signature{align-items:flex-start;flex-direction:column;gap:8px}
+}
+@media(prefers-reduced-motion:reduce){
+  .scroll-arrow,.scroll-ripple{animation:none!important}
+}
+
+
+/* Contrast fixes: the text page follows the active theme. */
+html[data-theme="dark"] .letters-page,
+body.dark-mode .letters-page,
+body.dark .letters-page,
+.dark-mode .letters-page,
+[data-theme="dark"] .letters-page {
+  background: linear-gradient(145deg, rgba(20, 31, 30, .97), rgba(25, 39, 36, .98) 50%, rgba(35, 34, 31, .98));
+  border-top-color: rgba(195, 220, 204, .13);
+}
+html[data-theme="dark"] .letters-page:before,
+body.dark-mode .letters-page:before,
+body.dark .letters-page:before,
+.dark-mode .letters-page:before,
+[data-theme="dark"] .letters-page:before {
+  background: radial-gradient(ellipse at 50% 0%, rgba(105, 145, 126, .12), transparent 56%);
+}
+html[data-theme="dark"] .letters-inner h2,
+body.dark-mode .letters-inner h2,
+body.dark .letters-inner h2,
+.dark-mode .letters-inner h2,
+[data-theme="dark"] .letters-inner h2 { color: #e2eee6; }
+html[data-theme="dark"] .letters-inner h2 span,
+body.dark-mode .letters-inner h2 span,
+body.dark .letters-inner h2 span,
+.dark-mode .letters-inner h2 span,
+[data-theme="dark"] .letters-inner h2 span { color: #9bcbb5; }
+html[data-theme="dark"] .letter-copy,
+body.dark-mode .letter-copy,
+body.dark .letter-copy,
+.dark-mode .letter-copy,
+[data-theme="dark"] .letter-copy { color: #c0d2c8; }
+html[data-theme="dark"] .letter-copy .letter-lead,
+body.dark-mode .letter-copy .letter-lead,
+body.dark .letter-copy .letter-lead,
+.dark-mode .letter-copy .letter-lead,
+[data-theme="dark"] .letter-copy .letter-lead { color: #e0eee5; }
+html[data-theme="dark"] .letter-copy .letter-ending,
+body.dark-mode .letter-copy .letter-ending,
+body.dark .letter-copy .letter-ending,
+.dark-mode .letter-copy .letter-ending,
+[data-theme="dark"] .letter-copy .letter-ending { color: #a9d3bd; border-top-color: rgba(195, 220, 204, .2); }
+html[data-theme="dark"] .letters-kicker,
+body.dark-mode .letters-kicker,
+body.dark .letters-kicker,
+.dark-mode .letters-kicker,
+[data-theme="dark"] .letters-kicker,
+html[data-theme="dark"] .letters-signature,
+body.dark-mode .letters-signature,
+body.dark .letters-signature,
+.dark-mode .letters-signature,
+[data-theme="dark"] .letters-signature { color: #91aa9c; }
+html[data-theme="dark"] .letters-signature,
+body.dark-mode .letters-signature,
+body.dark .letters-signature,
+.dark-mode .letters-signature,
+[data-theme="dark"] .letters-signature { border-top-color: rgba(195, 220, 204, .18); }
+html[data-theme="dark"] .back-to-top,
+body.dark-mode .back-to-top,
+body.dark .back-to-top,
+.dark-mode .back-to-top,
+[data-theme="dark"] .back-to-top { color: #b4d4c3; border-color: rgba(190, 220, 203, .3); }
+html[data-theme="dark"] .back-to-top:hover,
+body.dark-mode .back-to-top:hover,
+body.dark .back-to-top:hover,
+.dark-mode .back-to-top:hover,
+[data-theme="dark"] .back-to-top:hover { background: rgba(255, 255, 255, .07); }
+html[data-theme="dark"] .scroll-guide,
+body.dark-mode .scroll-guide,
+body.dark .scroll-guide,
+.dark-mode .scroll-guide,
+[data-theme="dark"] .scroll-guide { color: #c0d5ca; }
+html[data-theme="dark"] .scroll-arrow,
+body.dark-mode .scroll-arrow,
+body.dark .scroll-arrow,
+.dark-mode .scroll-arrow,
+[data-theme="dark"] .scroll-arrow {
+  color: #d5e9dc;
+  background: rgba(25, 42, 37, .88);
+  border-color: rgba(177, 215, 194, .38);
+}
+
+/* On phones the prompt sits directly below the intro copy, not below the illustration. */
+@media (max-width: 600px) {
+  .home-page .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding-bottom: 32px;
+    min-height: 0;
+  }
+  .home-page .hero > .intro { order: 1; }
+  .home-page .hero > .visual { order: 2; }
+  .home-page .hero > .intro .scroll-guide {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    transform: none;
+    margin: 25px auto 5px;
+    min-height: 76px;
+    width: 100%;
+  }
+  .home-page .hero > .scroll-guide { display: none; }
+}
+
+
+/* V3: Keep the scroll cue in normal document flow on every screen size.
+   Because it lives inside .intro, it stays with the text column on desktop
+   and below the intro copy on mobile instead of being anchored to the whole hero. */
+.home-page .hero {
+  padding-bottom: 0;
+}
+.home-page .hero > .intro .scroll-guide,
+.home-page .hero > .scroll-guide {
+  position: relative;
+  inset: auto;
+  left: auto;
+  bottom: auto;
+  transform: none;
+  display: flex;
+  width: fit-content;
+  max-width: 100%;
+  min-height: 0;
+  margin: clamp(22px, 3vh, 34px) auto 0;
+  padding: 8px 14px 10px;
+  gap: 8px;
+  font-size: 13px;
+}
+.home-page .hero > .intro .scroll-guide .scroll-guide-text,
+.home-page .hero > .scroll-guide .scroll-guide-text {
+  white-space: normal;
+  line-height: 1.6;
+}
+.home-page .hero > .intro .scroll-ripple,
+.home-page .hero > .scroll-guide .scroll-ripple {
+  bottom: 12px;
+}
+.home-page .hero > .intro .scroll-arrow,
+.home-page .hero > .scroll-guide .scroll-arrow {
+  width: 32px;
+  height: 32px;
+  font-size: 21px;
+}
+@media (max-width: 600px) {
+  .home-page .hero {
+    padding-bottom: 20px;
+  }
+  .home-page .hero > .intro .scroll-guide {
+    width: min(100%, 340px);
+    margin: 22px auto 4px;
+    padding: 8px 10px 10px;
+    font-size: 13px;
+  }
+}
+
+/* V3 typography pass: enlarge tiny labels and helper text by roughly 1–2 sizes. */
+.home-page .eyebrow,
+.home-page .overline,
+.home-page .interaction-hint,
+.home-page .micro-note,
+.home-page .visual-caption,
+.home-page .card-topline,
+.home-page .card-bottom,
+.home-page .card-meta,
+.home-page .photo-label,
+.home-page .floating-note,
+.home-page .site-footer,
+.home-page .nav-link,
+.home-page .brand-copy small {
+  font-size: max(13px, 1.08em);
+}
+.home-page .description {
+  font-size: max(15px, 1.06em);
+  line-height: 1.9;
+}
+.home-page .interaction-hint,
+.home-page .micro-note {
+  line-height: 1.8;
+}
+.home-page .visual-caption,
+.home-page .card-topline,
+.home-page .card-bottom,
+.home-page .card-meta,
+.home-page .photo-label,
+.home-page .brand-copy small {
+  letter-spacing: .04em;
+}
+.letters-kicker { font-size: 14px; }
+.letter-copy { font-size: 17px; }
+.letter-copy .letter-lead { font-size: 20px; }
+.letter-copy .letter-ending { font-size: 19px; }
+.letters-signature { font-size: 13px; }
+.back-to-top { font-size: 14px; }
+.scroll-guide { font-size: 13px; }
+@media (max-width: 600px) {
+  .letters-kicker { font-size: 13px; }
+  .letter-copy { font-size: 16px; }
+  .letter-copy .letter-lead { font-size: 18px; }
+  .letter-copy .letter-ending { font-size: 17px; }
+  .letters-signature { font-size: 13px; }
+  .back-to-top { font-size: 14px; }
+  .home-page .visual-caption,
+  .home-page .card-topline,
+  .home-page .card-bottom,
+  .home-page .card-meta,
+  .home-page .photo-label,
+  .home-page .brand-copy small,
+  .home-page .site-footer {
+    font-size: 12px;
+  }
+}
