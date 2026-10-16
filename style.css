@@ -1,0 +1,1138 @@
+@import url('https://fonts.googleapis.com/css2?family=LXGW+WenKai:wght@300;400;500;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+@font-face{
+  font-family:'LXGW WenKai Local';
+  src:url('./fonts/LXGWWenKaiLite-Regular.ttf') format('truetype');
+  font-style:normal;
+  font-weight:300 700;
+  font-display:swap;
+}
+
+:root{--ink:#203d3b;--muted:#6c8580;--mint:#cfe9dd;--cream:#fbf8ef;--coral:#df8e77;--deep:#477d70;--line:rgba(48,91,81,.16)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;min-height:100vh;color:var(--ink);font-family:"LXGW WenKai Local","LXGW WenKai",Manrope,sans-serif;background:linear-gradient(135deg,#edf7f0 0%,#f9f5e9 52%,#e7f1e9 100%);overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.ambient{position:fixed;z-index:-3;border-radius:50%;filter:blur(2px);pointer-events:none;animation:drift 15s ease-in-out infinite alternate}
+.ambient-one{width:38vw;height:38vw;min-width:300px;min-height:300px;top:-14vw;right:-8vw;background:radial-gradient(circle,rgba(255,255,255,.82),rgba(191,224,208,.08) 68%,transparent 72%)}
+.ambient-two{width:45vw;height:45vw;min-width:320px;min-height:320px;bottom:-23vw;left:-14vw;background:radial-gradient(circle,rgba(220,235,202,.72),rgba(236,218,186,.08) 68%,transparent 72%);animation-delay:-5s}
+.grain{position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.16;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.15'/%3E%3C/svg%3E")}
+.topbar{height:94px;max-width:1380px;padding:0 6.5%;margin:auto;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(49,91,80,.1);position:relative;z-index:5}
+.brand{display:flex;align-items:center;gap:12px}
+.brand-mark{width:42px;height:42px;border:1px solid rgba(59,111,97,.3);border-radius:14px 14px 14px 4px;display:grid;place-items:center;font-family:"LXGW WenKai Local","LXGW WenKai",serif;font-size:21px;color:#477d70;background:rgba(255,255,255,.38);box-shadow:0 5px 18px rgba(51,98,84,.07)}
+.brand-copy{display:flex;flex-direction:column;gap:3px}.brand-copy strong{font-family:"LXGW WenKai Local","LXGW WenKai",serif;font-size:17px;letter-spacing:.1em}.brand-copy small{font-size:8px;letter-spacing:.16em;color:#78918a}
+.nav-link{font-size:13px;letter-spacing:.08em;padding:11px 17px;border:1px solid rgba(57,99,87,.24);border-radius:999px;transition:.3s;background:rgba(255,255,255,.22)}
+.nav-link span{margin-left:12px;color:#679487}.nav-link:hover{background:#fff9;transform:translateY(-2px);border-color:#8fb7a7}
+.hero{max-width:1380px;min-height:calc(100vh - 154px);margin:auto;padding:48px 6.5% 34px;display:grid;grid-template-columns:.92fr 1.08fr;align-items:center;gap:4%}
+.intro{position:relative;z-index:2;padding:14px 0 30px;animation:rise .9s both}
+.eyebrow{display:flex;align-items:center;gap:10px;font-size:10px;letter-spacing:.2em;color:#64887d;font-weight:700}.eyebrow-dot{width:7px;height:7px;border-radius:50%;background:#df9c7e;box-shadow:0 0 0 5px rgba(223,156,126,.15)}
+.overline{margin:38px 0 13px;font-size:14px;letter-spacing:.16em;color:#66847b}
+h1{font-family:"LXGW WenKai Local","LXGW WenKai",serif;font-size:clamp(45px,5.4vw,78px);line-height:1.32;letter-spacing:.035em;margin:0;font-weight:600;color:#234541}
+h1 span{color:#6b9c8c}h1 i,.title-period{font-style:normal;color:#db987b}
+.lead{font-family:"LXGW WenKai Local","LXGW WenKai",serif;font-size:clamp(19px,2vw,25px);line-height:1.8;letter-spacing:.09em;margin:24px 0 13px;color:#345e55}
+.description{font-size:13px;line-height:2.15;color:#78908a;letter-spacing:.025em;margin:0 0 28px}
+.enter-button{display:inline-flex;align-items:center;gap:16px;padding:15px 19px 15px 16px;border-radius:6px 24px 24px 24px;background:#376e60;color:#fff;font-size:13px;letter-spacing:.08em;box-shadow:0 12px 28px rgba(55,110,96,.2);transition:transform .3s,box-shadow .3s,background .3s;position:relative;overflow:hidden}
+.enter-button:before{content:"";position:absolute;top:-80%;left:-40%;width:25%;height:260%;background:rgba(255,255,255,.2);transform:rotate(24deg);transition:left .6s}
+.enter-button:hover{transform:translateY(-4px);box-shadow:0 17px 34px rgba(55,110,96,.28);background:#28594e}.enter-button:hover:before{left:130%}
+.button-icon{font-size:17px;color:#e9d5a9}.button-arrow{font-size:18px;margin-left:15px;color:#d5e9df}.micro-note{display:flex;align-items:center;gap:10px;margin-top:25px;font-size:10px;letter-spacing:.08em;color:#92a69d}.tiny-line{width:26px;height:1px;background:#d29b7d}
+.visual{height:min(610px,67vw);min-height:460px;position:relative;display:flex;align-items:center;justify-content:center;perspective:1100px;animation:fadeIn 1.3s .15s both}
+.visual-caption{position:absolute;left:0;right:0;display:flex;justify-content:space-between;font-size:8px;letter-spacing:.18em;color:#91a79d}.caption-top{top:13px}.caption-bottom{bottom:8px}
+.orbit{position:absolute;border:1px solid rgba(92,146,128,.24);border-radius:50%;transform:rotate(-28deg);animation:orbitPulse 7s ease-in-out infinite alternate}.orbit-a{width:87%;height:65%}.orbit-b{width:100%;height:78%;transform:rotate(48deg);border-style:dashed;animation-duration:13s}.orbit-c{width:74%;height:90%;transform:rotate(71deg);border-color:rgba(218,154,124,.28);animation-duration:10s}
+.sun-glow{position:absolute;width:58%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(247,216,163,.68),rgba(226,226,183,.26) 45%,transparent 70%);filter:blur(4px);animation:breathe 6s ease-in-out infinite}
+.memory-card{position:absolute;border:1px solid rgba(255,255,255,.86);background:rgba(255,253,245,.77);box-shadow:0 24px 60px rgba(54,94,78,.14);backdrop-filter:blur(12px);border-radius:5px;padding:13px}
+.card-front{width:min(330px,58%);transform:rotate(4deg) translate(9%,1%);z-index:2;animation:cardFloat 7s ease-in-out infinite}
+.card-back{width:min(300px,52%);height:390px;transform:rotate(-9deg) translate(-23%,-1%);background:rgba(234,241,220,.86);z-index:1;display:flex;flex-direction:column;justify-content:space-between;animation:cardFloatBack 8s ease-in-out infinite}
+.card-topline,.card-bottom,.card-meta{display:flex;justify-content:space-between;align-items:center;color:#78948a;font-size:8px;letter-spacing:.13em}
+.scribble{font-family:"LXGW WenKai Local","LXGW WenKai",serif;font-size:32px;line-height:1.7;letter-spacing:.12em;color:#658879;transform:rotate(-5deg);padding-left:13px}.card-bottom{font-size:9px}
+.photo-placeholder{height:300px;position:relative;overflow:hidden;background:linear-gradient(#c9e2d9 0%,#f2e9c9 66%,#e6d4ae 100%)}
+.photo-sky{position:absolute;inset:0;background:linear-gradient(150deg,rgba(255,255,255,.48),transparent 45%)}
+.photo-sun{position:absolute;width:76px;height:76px;border-radius:50%;background:#f6d9a3;top:45px;right:37px;box-shadow:0 0 45px rgba(246,217,163,.65);animation:breathe 5s infinite}
+.hill{position:absolute;left:-15%;width:135%;border-radius:50% 50% 0 0}.hill-back{height:54%;bottom:-11%;background:#9ebdaf;transform:rotate(-8deg)}.hill-front{height:43%;bottom:-17%;background:#668f7d;transform:rotate(9deg);left:-3%}
+.photo-grain{position:absolute;inset:0;background:linear-gradient(0deg,rgba(40,73,59,.2),transparent 50%);opacity:.5}.photo-label{position:absolute;bottom:13px;left:13px;font-size:7px;letter-spacing:.18em;color:#f9f4e6;z-index:1}.photo-stamp{position:absolute;right:13px;top:13px;border:1px solid rgba(255,255,255,.7);border-radius:50%;width:49px;height:49px;display:grid;place-content:center;text-align:center;font-family:"LXGW WenKai Local","LXGW WenKai",serif;font-size:11px;line-height:1.4;color:#fff;transform:rotate(12deg);z-index:1}
+.card-quote{font-family:"LXGW WenKai Local","LXGW WenKai",serif;font-size:12px;line-height:1.9;letter-spacing:.04em;color:#486b5d;padding:17px 5px 13px}.card-meta{border-top:1px solid rgba(88,128,108,.18);padding:11px 3px 2px;font-size:8px}.card-meta span:last-child{font-size:15px;color:#d99b80}
+.floating-note{position:absolute;z-index:3;display:flex;align-items:center;gap:10px;padding:13px 16px;border-radius:4px 18px 18px 18px;background:rgba(255,255,248,.85);border:1px solid rgba(255,255,255,.9);box-shadow:0 12px 30px rgba(53,94,77,.1);font-family:"LXGW WenKai Local","LXGW WenKai",serif;font-size:10px;line-height:1.7;color:#638276;letter-spacing:.05em;animation:noteFloat 6s ease-in-out infinite}
+.note-one{top:19%;right:0;transform:rotate(5deg)}.note-star{font-size:23px;color:#d69c7c}.note-two{bottom:18%;left:0;transform:rotate(-5deg);animation-delay:-3s}.note-number{font-family:Manrope,"LXGW WenKai Local","LXGW WenKai",sans-serif;font-size:30px;color:#d79d7e}
+.spark{position:absolute;color:#d59c7e;animation:twinkle 3s ease-in-out infinite}.spark-one{top:18%;left:16%;font-size:23px}.spark-two{right:12%;bottom:29%;font-size:27px;animation-delay:-1s}.spark-three{top:34%;right:8%;font-size:13px;animation-delay:-2s}
+.site-footer{max-width:1380px;margin:auto;padding:20px 6.5% 25px;display:flex;justify-content:space-between;gap:20px;color:#9aaca3;font-size:8px;letter-spacing:.13em;border-top:1px solid rgba(49,91,80,.09)}.site-footer span:last-child{letter-spacing:.06em}
+.about-wrap{max-width:1060px;min-height:calc(100vh - 154px);margin:auto;padding:76px 7% 55px;animation:rise .8s both}.about-title{font-size:clamp(48px,6vw,78px);margin-top:22px}.about-subtitle{font-family:"LXGW WenKai Local","LXGW WenKai",serif;letter-spacing:.15em;color:#739186;font-size:17px;margin:13px 0 44px}
+.about-layout{display:grid;grid-template-columns:1.35fr .65fr;gap:8%;align-items:stretch}.about-copy{font-family:"LXGW WenKai Local","LXGW WenKai",serif;font-size:14px;line-height:2.2;color:#607c72}.about-copy p{margin:0 0 18px}.about-copy .dropcap{font-size:17px;color:#345f53;line-height:2.05}.dropcap:first-letter{font-size:37px;float:left;line-height:1;padding:8px 8px 0 0;color:#d29577}.about-copy strong{color:#386c5d;font-weight:600}.about-signoff{margin:30px 0 26px;padding:17px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);font-size:13px}.about-signoff span{float:right;color:#d59b7d}.enter-button.compact{font-family:Manrope,"LXGW WenKai Local","LXGW WenKai",sans-serif;font-size:12px;padding:12px 15px}.about-side{min-height:330px;position:relative;overflow:hidden;padding:27px;background:rgba(221,235,219,.65);border:1px solid rgba(255,255,255,.9);display:flex;flex-direction:column;justify-content:space-between;transform:rotate(1.5deg);box-shadow:0 20px 45px rgba(53,94,77,.08)}.side-number{font-size:clamp(70px,9vw,110px);font-weight:800;line-height:1;color:rgba(78,133,111,.24);letter-spacing:-.08em}.side-rule{height:1px;width:100%;background:rgba(77,124,105,.25);margin:20px 0}.side-label{font-size:8px;letter-spacing:.17em;color:#8ba498}.side-quote{font-family:"LXGW WenKai Local","LXGW WenKai",serif;font-size:22px;line-height:1.9;color:#4c7768;letter-spacing:.08em}.side-quote em{font-style:normal;color:#d29577}.side-flower{position:absolute;right:21px;bottom:9px;font-size:38px;color:#d49b7e;animation:twinkle 4s infinite}.back-link{display:inline-block;margin-top:35px;color:#729286;font-size:12px;letter-spacing:.08em}.back-link:hover{color:#315d51}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}@keyframes fadeIn{from{opacity:0}to{opacity:1}}@keyframes drift{from{transform:translate3d(-1%,0,0) scale(1)}to{transform:translate3d(3%,4%,0) scale(1.08)}}@keyframes breathe{0%,100%{transform:scale(1);opacity:.75}50%{transform:scale(1.08);opacity:1}}@keyframes orbitPulse{from{opacity:.45;scale:.98}to{opacity:.9;scale:1.03}}@keyframes cardFloat{0%,100%{translate:0 0;rotate:4deg}50%{translate:0 -10px;rotate:2deg}}@keyframes cardFloatBack{0%,100%{translate:0 0;rotate:-9deg}50%{translate:-3px 10px;rotate:-7deg}}@keyframes noteFloat{0%,100%{translate:0 0}50%{translate:0 -9px}}@keyframes twinkle{0%,100%{opacity:.45;transform:scale(.85) rotate(0)}50%{opacity:1;transform:scale(1.12) rotate(14deg)}}
+@media(max-width:900px){.hero{grid-template-columns:1fr;gap:0;padding-top:48px}.intro{padding-bottom:0}.visual{height:570px;min-height:0;margin-top:5px}.intro h1{font-size:clamp(48px,9vw,76px)}.overline{margin-top:28px}.description br{display:none}.about-wrap{padding-top:55px}.about-layout{gap:5%}.about-side{padding:20px}}
+@media(max-width:600px){.topbar{height:78px;padding:0 5%}.brand-mark{width:37px;height:37px}.brand-copy strong{font-size:15px}.brand-copy small{font-size:7px}.nav-link{padding:9px 13px;font-size:12px}.hero{padding:36px 6% 24px}.eyebrow{font-size:9px}.overline{font-size:12px;margin-top:29px}.intro h1{font-size:clamp(43px,11.5vw,64px)}.lead{font-size:19px;margin-top:17px}.description{font-size:12px}.visual{height:440px;margin-top:15px}.card-front{width:58%;padding:9px}.card-back{width:52%;height:300px;padding:10px}.photo-placeholder{height:220px}.photo-sun{width:55px;height:55px;right:24px;top:32px}.card-quote{font-size:10px;padding:10px 3px}.card-meta{font-size:7px}.scribble{font-size:24px}.floating-note{padding:9px 11px;font-size:9px}.note-one{right:-1%;top:18%}.note-two{left:-2%;bottom:16%}.visual-caption{font-size:7px}.site-footer{padding:17px 6%;flex-direction:column;gap:8px;font-size:7px}.about-wrap{padding:45px 7% 40px}.about-subtitle{font-size:14px;margin-bottom:30px}.about-layout{grid-template-columns:1fr;gap:30px}.about-copy{font-size:13px}.about-copy .dropcap{font-size:15px}.about-side{min-height:285px;width:95%;margin:auto}.side-number{font-size:82px}.side-quote{font-size:20px}.about-title{font-size:51px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
+
+
+/* === DREAMY ACRYLIC LAYER · PARTICLES · INTERACTIVE LEAVES === */
+body{isolation:isolate}
+.particle-canvas{position:fixed;inset:0;width:100%;height:100%;z-index:-2;pointer-events:none;opacity:.9}
+.light-beam{position:fixed;z-index:-2;pointer-events:none;mix-blend-mode:screen;filter:blur(22px);opacity:.5;transform-origin:top center}
+.light-beam-one{width:40vw;height:90vh;top:-25vh;left:8%;transform:rotate(28deg);background:linear-gradient(180deg,rgba(255,255,255,.72),rgba(220,245,226,.15),transparent);animation:beamDrift 17s ease-in-out infinite alternate}
+.light-beam-two{width:28vw;height:80vh;top:-20vh;right:8%;transform:rotate(-24deg);background:linear-gradient(180deg,rgba(255,224,188,.5),rgba(255,255,255,.08),transparent);animation:beamDriftTwo 21s ease-in-out infinite alternate}
+.leaf-layer{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.leaf{position:absolute;top:-12vh;left:var(--left);width:var(--size);height:calc(var(--size)*.58);border-radius:100% 0 100% 0;background:linear-gradient(135deg,rgba(151,190,151,.68),rgba(91,145,117,.28));box-shadow:inset 1px 1px 3px rgba(255,255,255,.55),0 8px 18px rgba(49,91,69,.06);opacity:var(--opacity);transform:rotate(var(--rotation));animation:leafFall var(--duration) linear var(--delay) infinite;pointer-events:auto;cursor:pointer;transition:filter .25s,scale .25s}
+.leaf:after{content:"";position:absolute;width:80%;height:1px;left:9%;top:50%;background:rgba(255,255,255,.6);transform:rotate(-18deg);transform-origin:center}
+.leaf:hover{filter:brightness(1.25) saturate(1.15);scale:1.3}
+.leaf.popped{animation:none!important;scale:1.8;opacity:0!important;filter:blur(7px);transition:all .6s ease}
+.leaf-burst{position:fixed;z-index:8;pointer-events:none;width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.9);box-shadow:0 0 12px 4px rgba(180,225,204,.75);animation:burstOut .75s ease-out forwards}
+.interaction-hint{display:flex;align-items:center;gap:8px;color:#819b90;font-size:10px;letter-spacing:.08em;margin-top:19px;margin-bottom:-12px}
+.hint-pulse{width:6px;height:6px;border-radius:50%;background:#d79b7d;box-shadow:0 0 0 0 rgba(215,155,125,.4);animation:hintPulse 2s infinite}
+.memory-card{backdrop-filter:blur(22px) saturate(1.25);-webkit-backdrop-filter:blur(22px) saturate(1.25);background:linear-gradient(135deg,rgba(255,255,250,.78),rgba(240,249,239,.46));border:1px solid rgba(255,255,255,.82);box-shadow:0 25px 70px rgba(43,83,69,.13),inset 0 1px 0 rgba(255,255,255,.9),inset 0 -1px 0 rgba(255,255,255,.22)}
+.floating-note,.about-side,.brand-mark,.nav-link{backdrop-filter:blur(18px) saturate(1.2);-webkit-backdrop-filter:blur(18px) saturate(1.2);box-shadow:0 12px 35px rgba(58,95,78,.08),inset 0 1px 0 rgba(255,255,255,.75)}
+.topbar{background:linear-gradient(90deg,rgba(249,253,244,.12),rgba(255,255,255,.24),rgba(249,253,244,.12));backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+.enter-button{box-shadow:0 12px 28px rgba(55,110,96,.2),inset 0 1px 0 rgba(255,255,255,.22)}
+.enter-button:active{transform:translateY(0) scale(.98)}
+@keyframes leafFall{0%{translate:0 -12vh;rotate:0deg}20%{translate:calc(var(--sway)*.45) 18vh;rotate:75deg}45%{translate:calc(var(--sway)*-.55) 43vh;rotate:165deg}70%{translate:calc(var(--sway)*.7) 70vh;rotate:255deg}100%{translate:calc(var(--sway)*-.25) 118vh;rotate:390deg}}
+@keyframes beamDrift{0%{translate:-2vw 0;opacity:.22}100%{translate:8vw 2vh;opacity:.58}}
+@keyframes beamDriftTwo{0%{translate:4vw 0;opacity:.2}100%{translate:-8vw 5vh;opacity:.52}}
+@keyframes burstOut{0%{transform:translate(0,0) scale(.5);opacity:1}100%{transform:translate(var(--dx),var(--dy)) scale(0);opacity:0}}
+@keyframes hintPulse{0%{box-shadow:0 0 0 0 rgba(215,155,125,.45)}70%{box-shadow:0 0 0 7px rgba(215,155,125,0)}100%{box-shadow:0 0 0 0 rgba(215,155,125,0)}}
+@media(max-width:600px){.light-beam-one{width:60vw;left:-8%}.light-beam-two{width:45vw;right:-8%}.interaction-hint{font-size:9px}.leaf{opacity:calc(var(--opacity)*.7)}}
+@media(prefers-reduced-motion:reduce){.leaf,.light-beam,.hint-pulse{animation:none!important}.particle-canvas{opacity:.25}}
+
+
+/* ===== V3: vivid acrylic, living botanical details, adaptive dark mode ===== */
+:root{
+  color-scheme:light;
+  --page-a:#e7f4e9;--page-b:#f9f2e5;--page-c:#dceee2;
+  --ink:#203f38;--muted:#718b80;--glass:rgba(255,255,248,.42);
+  --glass-edge:rgba(255,255,255,.88);--glass-shadow:rgba(41,83,66,.18);
+  --accent:#3f7862;--accent-warm:#d99b82;--particle:rgba(255,255,235,.95);
+  --petal-blue:#a8c9cf;--petal-lilac:#c5b5d7;--petal-cream:#f0d9ad;
+}
+body{background:linear-gradient(128deg,var(--page-a),var(--page-b) 48%,var(--page-c));transition:background .7s,color .5s}
+body:before{content:"";position:fixed;inset:-20%;z-index:-3;pointer-events:none;background:
+ radial-gradient(ellipse at 16% 28%,rgba(255,255,255,.8),transparent 28%),
+ radial-gradient(ellipse at 77% 20%,rgba(172,215,190,.62),transparent 26%),
+ radial-gradient(ellipse at 68% 77%,rgba(244,203,172,.38),transparent 29%),
+ radial-gradient(ellipse at 20% 88%,rgba(177,211,195,.55),transparent 30%);
+ animation:paintedLight 18s ease-in-out infinite alternate}
+.top-actions{display:flex;align-items:center;gap:13px}
+.theme-toggle{position:relative;width:70px;height:36px;border-radius:30px;border:1px solid rgba(90,130,110,.32);background:linear-gradient(120deg,rgba(255,255,255,.76),rgba(200,226,210,.44));box-shadow:0 7px 22px rgba(49,93,73,.12),inset 0 1px 0 white;display:flex;align-items:center;justify-content:space-around;padding:0 8px;cursor:pointer;overflow:hidden;transition:all .35s;backdrop-filter:blur(22px) saturate(1.6);-webkit-backdrop-filter:blur(22px) saturate(1.6)}
+.theme-toggle:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(49,93,73,.2),inset 0 1px 0 white}
+.theme-icon{font-size:16px;z-index:1;line-height:1;color:#547a68}.theme-moon{color:#647b92}
+.toggle-knob{position:absolute;width:28px;height:28px;left:3px;top:3px;border-radius:50%;background:linear-gradient(145deg,rgba(255,255,255,.98),rgba(215,239,222,.84));box-shadow:0 3px 9px rgba(39,83,65,.23),inset 0 1px 2px white;transition:transform .45s cubic-bezier(.2,.8,.2,1);z-index:0}
+body[data-theme="dark"] .toggle-knob{transform:translateX(34px);background:linear-gradient(145deg,#dbe7f3,#7d94a7)}
+/* Acrylic surfaces now react to the pointer via --mx/--my. */
+.memory-card,.floating-note,.about-side,.brand-mark,.nav-link,.theme-toggle,.music-toggle,.music-panel,.music-mute-btn{
+ position:relative;overflow:hidden;
+}
+.memory-card:before,.floating-note:before,.about-side:before,.brand-mark:before,.nav-link:before,.theme-toggle:before,.music-toggle:before,.music-panel:before,.music-mute-btn:before{
+ content:"";position:absolute;inset:0;pointer-events:none;border-radius:inherit;
+ background:radial-gradient(circle at var(--mx,35%) var(--my,20%),rgba(255,255,255,.86),rgba(255,255,255,.16) 18%,transparent 52%);
+ opacity:.85;transition:opacity .25s;mix-blend-mode:screen
+}
+.memory-card:after{content:"";position:absolute;inset:1px;border-radius:inherit;pointer-events:none;background:linear-gradient(125deg,rgba(255,255,255,.52),transparent 28%,transparent 70%,rgba(255,255,255,.24));opacity:.75}
+.card-front{transform-style:preserve-3d;transition:box-shadow .35s,border-color .35s;box-shadow:0 32px 85px rgba(37,80,61,.24),0 8px 25px rgba(255,255,255,.38),inset 0 1px 0 rgba(255,255,255,.98)}
+.card-front:hover{box-shadow:0 42px 100px rgba(37,80,61,.3),0 0 0 1px rgba(255,255,255,.9),inset 0 1px 0 white}
+.visual:after{content:"";position:absolute;inset:9% 7%;pointer-events:none;border-radius:50%;background:radial-gradient(ellipse,rgba(255,255,255,.18),transparent 66%);filter:blur(12px)}
+/* Richer, hand-painted botanical layer. SVGs are created by script and float near edges/bottom. */
+.botanical-scene{position:fixed;inset:0;z-index:1;pointer-events:none;overflow:hidden}
+.botanical-sprig{position:absolute;bottom:-5px;width:clamp(150px,22vw,310px);opacity:.9;filter:drop-shadow(0 12px 18px rgba(37,75,55,.13));transform-origin:bottom center;animation:sprigSway 7s ease-in-out infinite alternate;pointer-events:auto;cursor:pointer;transition:filter .35s,opacity .35s}
+.botanical-sprig svg{width:100%;height:auto;overflow:visible}
+.botanical-sprig.right{right:-2%;animation-delay:-2.5s}
+.botanical-sprig.left{left:-2%;transform:scaleX(-1);animation-delay:-4s}
+.botanical-sprig:hover{filter:drop-shadow(0 15px 25px rgba(37,75,55,.25)) brightness(1.08)}
+.botanical-sprig.petal-pop{animation:petalPop .65s ease-out forwards}
+.botanical-sprig .petal{transform-box:fill-box;transform-origin:center;transition:filter .3s}
+.botanical-sprig:hover .petal{filter:brightness(1.12)}
+.leaf{background:linear-gradient(135deg,rgba(190,219,174,.9),rgba(60,128,88,.62) 48%,rgba(35,92,67,.55));box-shadow:inset 1px 1px 4px rgba(255,255,255,.85),inset -2px -2px 4px rgba(28,82,53,.12),0 10px 20px rgba(49,91,69,.12);border:1px solid rgba(255,255,255,.28)}
+.leaf:after{height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.85),rgba(244,255,229,.6),transparent);box-shadow:0 0 3px rgba(255,255,255,.5)}
+/* Dark palette: forest green, deep teal, moonlit glass, Monet-like flowers. */
+@media(prefers-color-scheme:dark){
+ body:not([data-theme="light"]){color:var(--ink)}
+}
+body[data-theme="dark"]{
+ color:#e1eee5;
+ --page-a:#0d211d;--page-b:#182d29;--page-c:#10221f;
+ --ink:#e1eee5;--muted:#a0b9ac;--glass:rgba(21,47,40,.58);
+ --glass-edge:rgba(206,238,219,.28);--glass-shadow:rgba(0,0,0,.3);
+ --accent:#a3cdb4;--accent-warm:#e2ad96;--particle:rgba(220,255,230,.9);
+ --petal-blue:#8ab9c8;--petal-lilac:#a89bc8;--petal-cream:#e7c994;
+ background:linear-gradient(128deg,var(--page-a),var(--page-b) 48%,var(--page-c));
+ color-scheme:dark
+}
+body[data-theme="dark"]:before{background:
+ radial-gradient(ellipse at 16% 28%,rgba(100,165,135,.2),transparent 28%),
+ radial-gradient(ellipse at 77% 20%,rgba(68,139,119,.25),transparent 26%),
+ radial-gradient(ellipse at 68% 77%,rgba(170,120,111,.14),transparent 29%),
+ radial-gradient(ellipse at 20% 88%,rgba(91,145,120,.2),transparent 30%)}
+body[data-theme="dark"] .topbar{border-bottom-color:rgba(202,235,214,.12);background:linear-gradient(90deg,rgba(15,38,33,.25),rgba(39,66,57,.38),rgba(15,38,33,.25))}
+body[data-theme="dark"] .brand-mark,body[data-theme="dark"] .nav-link,body[data-theme="dark"] .theme-toggle{background:linear-gradient(135deg,rgba(43,76,65,.8),rgba(20,44,38,.65));border-color:rgba(192,228,203,.22);color:#e0eee3;box-shadow:0 8px 24px rgba(0,0,0,.2),inset 0 1px 0 rgba(255,255,255,.15)}
+body[data-theme="dark"] .brand-copy small,body[data-theme="dark"] .eyebrow,body[data-theme="dark"] .overline,body[data-theme="dark"] .micro-note,body[data-theme="dark"] .interaction-hint,body[data-theme="dark"] .description,body[data-theme="dark"] .visual-caption,body[data-theme="dark"] .site-footer,body[data-theme="dark"] .about-subtitle,body[data-theme="dark"] .about-copy{color:#a5beb0}
+body[data-theme="dark"] h1,body[data-theme="dark"] .lead{color:#e2f0e5}
+body[data-theme="dark"] h1 span{color:#a5d1b8}
+body[data-theme="dark"] .memory-card{background:linear-gradient(135deg,rgba(43,76,65,.78),rgba(20,45,39,.62));border-color:rgba(225,247,231,.28);box-shadow:0 30px 75px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,255,255,.3)}
+body[data-theme="dark"] .card-topline,body[data-theme="dark"] .card-bottom,body[data-theme="dark"] .card-meta,body[data-theme="dark"] .card-quote{color:#c0d8c8}
+body[data-theme="dark"] .scribble{color:#b4d4bf}
+body[data-theme="dark"] .floating-note,body[data-theme="dark"] .about-side{background:linear-gradient(135deg,rgba(47,81,68,.76),rgba(22,48,41,.64));border-color:rgba(228,246,231,.24);color:#d1e5d7;box-shadow:0 18px 40px rgba(0,0,0,.23),inset 0 1px 0 rgba(255,255,255,.2)}
+body[data-theme="dark"] .side-number{color:rgba(169,218,187,.25)}
+body[data-theme="dark"] .side-label,body[data-theme="dark"] .side-quote,body[data-theme="dark"] .about-copy .dropcap,body[data-theme="dark"] .about-copy strong,body[data-theme="dark"] .back-link{color:#b7d8c2}
+body[data-theme="dark"] .side-quote em{color:#e2ad96}
+body[data-theme="dark"] .about-signoff{border-color:rgba(202,235,214,.2)}
+body[data-theme="dark"] .photo-placeholder{background:linear-gradient(#426d6a 0%,#8f9d84 66%,#6e856b 100%)}
+body[data-theme="dark"] .photo-sun{background:#f0d4a1;box-shadow:0 0 45px rgba(245,206,142,.3)}
+body[data-theme="dark"] .hill-back{background:#658f7c}body[data-theme="dark"] .hill-front{background:#315d4b}
+body[data-theme="dark"] .enter-button{background:linear-gradient(120deg,#518b70,#2e6654);box-shadow:0 15px 35px rgba(0,0,0,.28),inset 0 1px 0 rgba(255,255,255,.22)}
+body[data-theme="dark"] .enter-button:hover{background:linear-gradient(120deg,#659f83,#39745f)}
+body[data-theme="dark"] .orbit{border-color:rgba(160,218,186,.23)}
+body[data-theme="dark"] .orbit-c{border-color:rgba(228,173,150,.25)}
+body[data-theme="dark"] .sun-glow{background:radial-gradient(circle,rgba(211,190,139,.25),rgba(109,166,140,.13) 45%,transparent 70%)}
+body[data-theme="dark"] .leaf{background:linear-gradient(135deg,rgba(138,190,138,.8),rgba(47,112,79,.68) 48%,rgba(25,71,51,.72));box-shadow:inset 1px 1px 4px rgba(220,255,225,.32),0 10px 20px rgba(0,0,0,.2)}
+body[data-theme="dark"] .light-beam{opacity:.24;mix-blend-mode:screen}
+body[data-theme="dark"] .ambient-one{background:radial-gradient(circle,rgba(119,174,148,.25),rgba(64,111,91,.04) 68%,transparent 72%)}
+body[data-theme="dark"] .ambient-two{background:radial-gradient(circle,rgba(104,147,117,.22),rgba(130,99,83,.03) 68%,transparent 72%)}
+@keyframes paintedLight{0%{transform:translate3d(-2%,0,0) rotate(-2deg) scale(1)}100%{transform:translate3d(3%,2%,0) rotate(2deg) scale(1.06)}}
+@keyframes sprigSway{0%{rotate:-2deg;translate:0 0}100%{rotate:2.5deg;translate:4px -3px}}
+@keyframes petalPop{0%{transform:scale(1) rotate(0);opacity:.9}45%{transform:scale(1.12) rotate(5deg);opacity:1}100%{transform:scale(.94) rotate(-4deg);opacity:.65}}
+@media(max-width:600px){.top-actions{gap:8px}.theme-toggle{width:61px;height:33px;padding:0 6px}.toggle-knob{width:25px;height:25px}.theme-icon{font-size:14px}body[data-theme="dark"] .toggle-knob{transform:translateX(28px)}.botanical-sprig{width:clamp(115px,34vw,190px);opacity:.8}.botanical-sprig.left{left:-7%}.botanical-sprig.right{right:-7%}.interaction-hint{margin-top:15px}}
+@media(prefers-reduced-motion:reduce){body:before,.botanical-sprig{animation:none!important}}
+
+
+/* ===== V4 refinement: full-bleed acrylic header + fluid, fuller layout ===== */
+/* Make the header glass span the full viewport; content inside stays aligned to the page grid. */
+.topbar{
+  width:100%;
+  max-width:none;
+  padding-left:max(4.5vw, 22px);
+  padding-right:max(4.5vw, 22px);
+  background:linear-gradient(100deg,rgba(249,253,244,.48),rgba(255,255,255,.34) 48%,rgba(249,253,244,.48));
+  border-bottom:1px solid rgba(255,255,255,.58);
+  box-shadow:0 8px 28px rgba(49,91,73,.045),inset 0 -1px 0 rgba(255,255,255,.32);
+  backdrop-filter:blur(26px) saturate(1.45);
+  -webkit-backdrop-filter:blur(26px) saturate(1.45);
+}
+.topbar:before{
+  content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background:linear-gradient(120deg,rgba(255,255,255,.26),transparent 30%,rgba(255,255,255,.14) 70%,transparent);
+}
+.topbar .brand,.topbar nav{position:relative;z-index:1}
+body[data-theme="dark"] .topbar{
+  background:linear-gradient(100deg,rgba(12,31,27,.86),rgba(26,51,44,.72) 48%,rgba(12,31,27,.86));
+  border-bottom-color:rgba(204,239,216,.16);
+  box-shadow:0 8px 30px rgba(0,0,0,.16),inset 0 -1px 0 rgba(255,255,255,.06);
+}
+/* Use more of the available viewport while retaining comfortable gutters. */
+.hero{
+  width:100%;max-width:1600px;
+  padding-left:clamp(26px,6vw,100px);
+  padding-right:clamp(26px,6vw,100px);
+  grid-template-columns:minmax(0,.98fr) minmax(0,1.12fr);
+  gap:clamp(28px,4.2vw,74px);
+  min-height:calc(100svh - 150px);
+}
+.intro{max-width:650px}
+.visual{height:clamp(520px, min(66vw, calc(100svh - 190px)), 760px);min-height:500px}
+.card-front{width:clamp(290px,27vw,390px)}
+.card-back{width:clamp(260px,24vw,350px);height:clamp(350px,34vw,445px)}
+.photo-placeholder{height:clamp(270px,27vw,360px)}
+.about-wrap{width:100%;max-width:1240px;padding-left:clamp(26px,8vw,120px);padding-right:clamp(26px,8vw,120px)}
+.about-layout{grid-template-columns:minmax(0,1.35fr) minmax(260px,.65fr);gap:clamp(36px,7vw,100px)}
+/* Fix left botanical artwork mirroring: keep the plant's transform independent from animation. */
+.botanical-sprig.left{left:-2%;transform:scaleX(-1);animation-name:sprigSwayLeft}
+@keyframes sprigSwayLeft{0%{rotate:2deg;translate:0 0}100%{rotate:-2.5deg;translate:-4px -3px}}
+/* Keep leaves as decorative click targets, never as navigation elements. */
+.leaf-layer{pointer-events:none}
+.leaf{pointer-events:auto;touch-action:manipulation}
+/* Avoid fixed-width overflow and tune layout for tablets and small phones. */
+@media(min-width:1500px){
+  .hero{max-width:1700px;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr)}
+  .intro h1{font-size:clamp(74px,5.1vw,92px)}
+  .lead{font-size:clamp(24px,1.8vw,30px)}
+  .description{font-size:15px}
+}
+@media(max-width:1000px){
+  .hero{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:24px;padding-left:4vw;padding-right:4vw}
+  .visual{height:clamp(450px,58vw,610px);min-height:450px}
+  .card-front{width:clamp(250px,36vw,330px)}
+  .card-back{width:clamp(225px,32vw,290px);height:350px}
+  .photo-placeholder{height:clamp(230px,29vw,290px)}
+  .note-one{right:-1%}.note-two{left:-1%}
+}
+@media(max-width:760px){
+  .topbar{height:76px;padding-left:20px;padding-right:20px}
+  .hero{display:flex;flex-direction:column;align-items:stretch;gap:0;padding:35px 6vw 25px;min-height:auto}
+  .intro{width:100%;max-width:none;padding-bottom:0}
+  .intro h1{font-size:clamp(46px,9.5vw,70px)}
+  .overline{margin-top:26px}
+  .lead{font-size:clamp(19px,4vw,24px)}
+  .description{max-width:620px}
+  .visual{width:100%;height:clamp(420px,105vw,570px);min-height:420px;margin-top:4px;overflow:visible}
+  .card-front{width:clamp(245px,55vw,330px);max-width:72%}
+  .card-back{width:clamp(220px,48vw,290px);height:clamp(300px,72vw,370px);max-width:65%}
+  .photo-placeholder{height:clamp(210px,54vw,285px)}
+  .about-wrap{padding:42px 6vw 42px;min-height:auto}
+  .about-layout{grid-template-columns:minmax(0,1fr);gap:28px}
+  .about-side{width:100%;max-width:520px;min-height:290px}
+  .site-footer{padding-left:6vw;padding-right:6vw}
+}
+@media(max-width:480px){
+  .topbar{height:70px;padding-left:15px;padding-right:15px}
+  .brand{gap:8px}.brand-mark{width:34px;height:34px;font-size:18px}
+  .brand-copy strong{font-size:14px}.brand-copy small{font-size:6px;letter-spacing:.1em}
+  .top-actions{gap:7px}.theme-toggle{width:56px;height:31px}.toggle-knob{width:23px;height:23px;top:3px;left:3px}
+  body[data-theme="dark"] .toggle-knob{transform:translateX(25px)}
+  .nav-link{padding:8px 10px;font-size:11px}.nav-link span{margin-left:5px}
+  .hero{padding:28px 5vw 18px}
+  .intro h1{font-size:clamp(40px,10.5vw,53px);letter-spacing:0}
+  .eyebrow{font-size:8px;letter-spacing:.15em}
+  .overline{font-size:11px;letter-spacing:.1em}
+  .lead{font-size:18px;line-height:1.7}
+  .description{font-size:11px;line-height:2}
+  .enter-button{gap:10px;padding:13px 14px;font-size:11px}
+  .button-arrow{margin-left:5px}
+  .visual{height:390px;min-height:390px;margin-top:0}
+  .card-front{width:59%;max-width:255px;padding:8px;transform:rotate(4deg) translate(8%,1%)}
+  .card-back{width:53%;max-width:225px;height:285px;padding:9px;transform:rotate(-9deg) translate(-22%,-1%)}
+  .photo-placeholder{height:205px}
+  .card-quote{font-size:9px;padding:8px 2px}
+  .card-meta{font-size:6px;padding-top:8px}
+  .card-topline,.card-bottom{font-size:7px}
+  .scribble{font-size:21px}
+  .floating-note{padding:8px 9px;gap:6px;font-size:8px}
+  .note-one{top:17%;right:-1%}.note-two{bottom:14%;left:-1%}
+  .note-number{font-size:24px}.note-star{font-size:18px}
+  .visual-caption{font-size:6px;letter-spacing:.1em}
+  .botanical-sprig{width:clamp(100px,31vw,145px);opacity:.72}
+  .botanical-sprig.left{left:-8%}.botanical-sprig.right{right:-8%}
+  .about-title{font-size:clamp(42px,12vw,52px)}
+  .about-subtitle{font-size:13px;letter-spacing:.08em}
+  .about-copy{font-size:12px;line-height:2.05}
+  .about-copy .dropcap{font-size:14px}
+  .site-footer{font-size:6px;letter-spacing:.08em}
+}
+
+
+/* ===== V5 detail polish: stable 3D tilt + visible mirrored botanical tap feedback ===== */
+.memory-card{
+  --tilt-x:0deg;
+  --tilt-y:0deg;
+  --tilt-z:0deg;
+  transform-style:preserve-3d;
+  will-change:transform;
+  transition:transform .32s cubic-bezier(.2,.72,.22,1), box-shadow .35s, border-color .35s;
+}
+.card-front{
+  transform:perspective(1000px) rotateX(var(--tilt-x)) rotateY(var(--tilt-y)) rotateZ(var(--tilt-z)) rotate(4deg) translate(9%,1%);
+}
+.card-back{
+  transform:perspective(1000px) rotateX(var(--tilt-x)) rotateY(var(--tilt-y)) rotateZ(var(--tilt-z)) rotate(-9deg) translate(-23%,-1%);
+}
+.memory-card:before{transform:translateZ(1px)}
+.memory-card:after{transform:translateZ(2px)}
+/* The botanical silhouette itself stays mirrored; the bounce is applied to its SVG child. */
+.botanical-sprig.left{left:0;bottom:-2px;transform:scaleX(-1);animation-name:sprigSwayLeft}
+.botanical-sprig.right{right:0;bottom:-2px}
+.botanical-sprig{z-index:2;opacity:.94;transform-style:preserve-3d}
+.botanical-sprig svg{transform-origin:50% 100%}
+.botanical-sprig.petal-pop{animation-name:sprigSway;animation-duration:7s;animation-iteration-count:infinite;animation-direction:alternate;animation-fill-mode:none}
+.botanical-sprig.left.petal-pop{animation-name:sprigSwayLeft}
+.botanical-sprig.petal-pop svg{animation:sprigTap .68s cubic-bezier(.2,.85,.3,1) both}
+@keyframes sprigTap{
+  0%{transform:scale(1)}
+  24%{transform:scale(1.075)}
+  44%{transform:scale(.965)}
+  63%{transform:scale(1.025)}
+  82%{transform:scale(.99)}
+  100%{transform:scale(1)}
+}
+/* Richer dimensional response for the About feature card. */
+.about-side{
+  --about-tilt-x:0deg;
+  --about-tilt-y:0deg;
+  transform:perspective(1000px) rotateX(var(--about-tilt-x)) rotateY(var(--about-tilt-y)) rotateZ(1.5deg) translateZ(0);
+  transform-style:preserve-3d;
+  transition:transform .38s cubic-bezier(.2,.72,.22,1),box-shadow .35s,border-color .35s;
+  will-change:transform;
+}
+.about-side:after{
+  content:"";position:absolute;inset:1px;border-radius:inherit;pointer-events:none;
+  background:linear-gradient(125deg,rgba(255,255,255,.42),transparent 28%,transparent 72%,rgba(255,255,255,.18));
+  opacity:.85;transform:translateZ(2px)
+}
+.about-side:hover{box-shadow:0 32px 70px rgba(43,83,69,.18),inset 0 1px 0 rgba(255,255,255,.85)}
+.about-side .side-number,.about-side .side-rule,.about-side .side-label,.about-side .side-quote,.about-side .side-flower{transform:translateZ(18px)}
+.about-side .side-flower{filter:drop-shadow(0 5px 7px rgba(213,155,125,.25))}
+@media(max-width:760px){
+  .botanical-sprig.left{left:-1%;bottom:0}
+  .botanical-sprig.right{right:-1%;bottom:0}
+  .memory-card{will-change:auto}
+}
+@media(max-width:480px){
+  .botanical-sprig{opacity:.84}
+  .botanical-sprig.left{left:-1%;width:clamp(110px,34vw,155px)}
+  .botanical-sprig.right{right:-1%;width:clamp(110px,34vw,155px)}
+}
+@media(prefers-reduced-motion:reduce){
+  .memory-card,.about-side{transition:none}
+  .botanical-sprig.petal-pop svg{animation:none}
+}
+
+
+/* V6: keep decorative page text from being selected/copied; editable fields remain usable. */
+html, body, body *{
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  user-select:none;
+  -webkit-touch-callout:none;
+}
+input, textarea, select, [contenteditable="true"], [contenteditable="true"] *{
+  -webkit-user-select:text;
+  -moz-user-select:text;
+  -ms-user-select:text;
+  user-select:text;
+  -webkit-touch-callout:default;
+}
+img, svg{
+  -webkit-user-drag:none;
+  user-drag:none;
+}
+::selection{background:transparent;color:inherit}
+::-moz-selection{background:transparent;color:inherit}
+
+
+/* ===== V7: botanical framing stays on the right, leaving copy and cards uncluttered ===== */
+.botanical-sprig.left{display:none!important}
+.botanical-sprig.right{
+  right:-1.5%;
+  bottom:-3px;
+  width:clamp(165px,22vw,315px);
+  z-index:2;
+  opacity:.96;
+}
+.corner-foliage{
+  position:fixed;
+  z-index:1;
+  width:clamp(130px,17vw,250px);
+  pointer-events:none;
+  opacity:.47;
+  filter:drop-shadow(0 12px 18px rgba(44,84,59,.12));
+  transform-origin:50% 50%;
+  animation:foliageSway 9s ease-in-out infinite alternate;
+}
+.corner-foliage svg{display:block;width:100%;height:auto;overflow:visible}
+.corner-foliage-top{
+  top:-36px;
+  right:-25px;
+  transform:rotate(10deg);
+  animation-delay:-2.4s;
+}
+.corner-foliage-bottom{
+  right:clamp(90px,12vw,180px);
+  bottom:-72px;
+  width:clamp(120px,14vw,210px);
+  transform:rotate(26deg) scale(.94);
+  opacity:.32;
+  animation-delay:-5.2s;
+}
+@keyframes foliageSway{
+  from{margin-top:-3px;filter:drop-shadow(0 10px 16px rgba(44,84,59,.1))}
+  to{margin-top:5px;filter:drop-shadow(0 14px 20px rgba(44,84,59,.16))}
+}
+@media(max-width:760px){
+  .corner-foliage-top{top:36px;right:-40px;width:clamp(95px,24vw,145px);opacity:.3}
+  .corner-foliage-bottom{right:clamp(70px,19vw,115px);bottom:-35px;width:clamp(92px,22vw,135px);opacity:.22}
+  .botanical-sprig.right{right:-2%;width:clamp(120px,34vw,175px);opacity:.86}
+}
+@media(max-width:480px){
+  .corner-foliage-top{top:58px;right:-46px;opacity:.24}
+  .corner-foliage-bottom{right:clamp(65px,18vw,95px);bottom:-24px;opacity:.18}
+}
+@media(prefers-reduced-motion:reduce){
+  .corner-foliage{animation:none}
+}
+
+
+/* ===== V8: remove all foliage / leaves that can cover UI ===== */
+.leaf-layer,
+.leaf,
+.botanical-scene,
+.botanical-sprig,
+.corner-foliage {
+  display: none !important;
+  pointer-events: none !important;
+  visibility: hidden !important;
+}
+
+/* ===== Music widget + dropdown panel ===== */
+.music-widget {
+  position: relative;
+  z-index: 20;
+}
+.music-toggle {
+  position: relative;
+  width: 42px;
+  height: 34px;
+  border: 1px solid rgba(57, 99, 87, 0.24);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.22);
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  transition: background 0.3s, transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+  backdrop-filter: blur(18px) saturate(1.2);
+  -webkit-backdrop-filter: blur(18px) saturate(1.2);
+  box-shadow: 0 12px 35px rgba(58, 95, 78, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.75);
+}
+.music-toggle:hover {
+  background: rgba(255, 255, 255, 0.55);
+  transform: translateY(-2px);
+  border-color: #8fb7a7;
+  box-shadow: 0 12px 28px rgba(49, 93, 73, 0.14), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+.music-icon {
+  font-size: 15px;
+  line-height: 1;
+  color: #477d70;
+  transition: opacity 0.25s, transform 0.25s;
+}
+.music-toggle.is-playing:not(.is-muted) .music-icon {
+  animation: musicPulse 1.4s ease-in-out infinite;
+  color: #2f6b50;
+}
+.music-toggle.is-playing:not(.is-muted) {
+  background: rgba(55, 110, 96, 0.18);
+  border-color: rgba(55, 110, 96, 0.35);
+}
+.music-widget.is-open .music-toggle {
+  background: rgba(55, 110, 96, 0.2);
+  border-color: rgba(55, 110, 96, 0.4);
+}
+@keyframes musicPulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.12); opacity: 0.85; }
+}
+
+.music-panel {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  min-width: 180px;
+  max-width: min(240px, 78vw);
+  padding: 12px 10px 10px;
+  border-radius: 14px;
+  /* 与导航/卡片一致的毛玻璃 */
+  background: linear-gradient(135deg, rgba(255, 255, 250, 0.72), rgba(240, 249, 239, 0.42));
+  border: 1px solid rgba(255, 255, 255, 0.82);
+  box-shadow: 0 18px 40px rgba(43, 83, 69, 0.14), inset 0 1px 0 rgba(255, 255, 255, 0.9), inset 0 -1px 0 rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(22px) saturate(1.25);
+  -webkit-backdrop-filter: blur(22px) saturate(1.25);
+  z-index: 30;
+  animation: musicPanelIn 0.22s ease-out;
+}
+@keyframes musicPanelIn {
+  from { opacity: 0; transform: translateY(-6px) scale(0.97); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+.music-panel-title {
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  color: #7a968b;
+  padding: 2px 8px 10px;
+  border-bottom: 1px solid rgba(70, 110, 95, 0.12);
+  margin-bottom: 6px;
+}
+.music-track-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 220px;
+  overflow-y: auto;
+}
+.music-track {
+  display: block;
+  width: 100%;
+  text-align: left;
+  border: none;
+  background: transparent;
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 14px;
+  letter-spacing: 0.04em;
+  color: #2f5348;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.music-track:hover {
+  background: rgba(55, 110, 96, 0.1);
+}
+.music-track.is-active {
+  background: rgba(55, 110, 96, 0.16);
+  color: #1e4a3d;
+  font-weight: 600;
+}
+.music-track.is-active::before {
+  content: "♫ ";
+  color: #5a9a80;
+}
+.music-mute-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 8px;
+  padding: 11px 12px;
+  border: 1px solid rgba(57, 99, 87, 0.24);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.22);
+  font-family: inherit;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  color: #3a6b5c;
+  cursor: pointer;
+  transition: background 0.3s, border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  backdrop-filter: blur(18px) saturate(1.2);
+  -webkit-backdrop-filter: blur(18px) saturate(1.2);
+  box-shadow: 0 8px 22px rgba(58, 95, 78, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.75);
+}
+.music-mute-btn:hover {
+  background: rgba(255, 255, 255, 0.55);
+  border-color: #8fb7a7;
+  transform: translateY(-1px);
+}
+.music-mute-btn .mute-label-on { display: none; }
+.music-mute-btn .mute-label-off { display: inline; }
+.music-mute-btn.is-muted .mute-label-on { display: inline; }
+.music-mute-btn.is-muted .mute-label-off { display: none; }
+
+.top-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+body[data-theme="dark"] .music-toggle,
+body[data-theme="dark"] .music-mute-btn {
+  background: linear-gradient(135deg, rgba(43, 76, 65, 0.8), rgba(20, 44, 38, 0.65));
+  border-color: rgba(192, 228, 203, 0.22);
+  color: #e0eee3;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+body[data-theme="dark"] .music-toggle:hover,
+body[data-theme="dark"] .music-mute-btn:hover {
+  background: linear-gradient(135deg, rgba(55, 95, 80, 0.85), rgba(28, 55, 48, 0.7));
+  border-color: rgba(192, 228, 203, 0.35);
+}
+body[data-theme="dark"] .music-icon {
+  color: #a8d4c0;
+}
+body[data-theme="dark"] .music-toggle.is-playing:not(.is-muted) {
+  background: linear-gradient(135deg, rgba(60, 110, 90, 0.85), rgba(30, 70, 58, 0.7));
+  border-color: rgba(160, 220, 190, 0.4);
+}
+body[data-theme="dark"] .music-panel {
+  background: linear-gradient(135deg, rgba(43, 76, 65, 0.78), rgba(20, 45, 39, 0.62));
+  border-color: rgba(225, 247, 231, 0.28);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+body[data-theme="dark"] .music-panel-title {
+  color: #8fb3a5;
+  border-bottom-color: rgba(160, 200, 180, 0.15);
+}
+body[data-theme="dark"] .music-track {
+  color: #d4ebe0;
+}
+body[data-theme="dark"] .music-track:hover {
+  background: rgba(120, 180, 150, 0.15);
+}
+body[data-theme="dark"] .music-track.is-active {
+  background: rgba(120, 180, 150, 0.22);
+  color: #e8faf0;
+}
+body[data-theme="dark"] .music-mute-btn {
+  color: #b8dcc8;
+}
+
+/* ===== Mobile scroll guide (ripple + arrow) ===== */
+.scroll-guide {
+  display: none; /* only on mobile */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 28px;
+  margin-bottom: 8px;
+  opacity: 0.85;
+  transition: opacity 0.45s ease, transform 0.45s ease;
+  pointer-events: none;
+  position: relative;
+  height: 56px;
+}
+.scroll-guide.is-hidden {
+  opacity: 0;
+  transform: translateY(12px);
+  pointer-events: none;
+}
+.scroll-ripple {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 28px;
+  height: 28px;
+  margin: -14px 0 0 -14px;
+  border: 1.5px solid rgba(71, 125, 112, 0.45);
+  border-radius: 50%;
+  animation: rippleOut 2.2s ease-out infinite;
+}
+.scroll-ripple.delay {
+  animation-delay: 1.1s;
+}
+.scroll-arrow {
+  font-size: 18px;
+  color: #5a8a7a;
+  line-height: 1;
+  animation: arrowBob 1.6s ease-in-out infinite;
+  z-index: 1;
+}
+.scroll-label {
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  color: #7a9a8e;
+  z-index: 1;
+}
+@keyframes rippleOut {
+  0% { transform: scale(0.6); opacity: 0.7; }
+  100% { transform: scale(2.4); opacity: 0; }
+}
+@keyframes arrowBob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(5px); }
+}
+
+/* ===== Mobile-first screen: intro fills first viewport, visual is page 2 ===== */
+@media (max-width: 760px) {
+  /* Make the intro section occupy the full first screen */
+  .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 0 6vw 0;
+    min-height: auto;
+  }
+
+  .intro {
+    width: 100%;
+    max-width: none;
+    position: relative;
+    /* Full first viewport minus topbar — use svh to avoid mobile browser chrome jump */
+    min-height: calc(100svh - 76px);
+    min-height: calc(100dvh - 76px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* 整块文案垂直居中，避免挤在上半屏 */
+    padding: clamp(16px, 3vh, 32px) 0 clamp(56px, 9vh, 72px); /* 底部留给引导 */
+    box-sizing: border-box;
+  }
+
+  /* 用视口高度动态拉开间距，让第一屏更丰满 */
+  .intro .eyebrow {
+    margin: 0;
+    font-size: clamp(9px, 2.4vw, 11px);
+  }
+  .intro .overline {
+    margin: clamp(14px, 2.8vh, 28px) 0 clamp(8px, 1.4vh, 14px);
+    font-size: clamp(13px, 3.3vw, 15px);
+  }
+  .intro h1 {
+    font-size: clamp(44px, 9.5vw, 70px);
+    line-height: 1.28;
+    margin: 0;
+  }
+  .intro .lead {
+    margin: clamp(16px, 2.8vh, 28px) 0 clamp(8px, 1.4vh, 14px);
+    font-size: clamp(18px, 4.4vw, 24px);
+    line-height: 1.75;
+  }
+  .intro .description {
+    margin: 0 0 clamp(18px, 3.2vh, 32px);
+    font-size: clamp(12px, 3.2vw, 14px);
+    line-height: 2;
+    max-width: 100%;
+  }
+
+  /* 更大的主按钮，让屏幕更完整 */
+  .intro .enter-button {
+    align-self: stretch; /* 手机上按钮拉满宽度更有存在感 */
+    justify-content: center;
+    gap: 12px;
+    padding: clamp(16px, 2.6vh, 20px) clamp(18px, 4vw, 24px);
+    font-size: clamp(14px, 3.6vw, 16px);
+    border-radius: 10px 28px 28px 28px;
+    box-shadow: 0 16px 36px rgba(55, 110, 96, 0.3);
+  }
+  .intro .enter-button .button-icon {
+    font-size: clamp(17px, 4.2vw, 20px);
+  }
+  .intro .enter-button .button-arrow {
+    margin-left: 10px;
+    font-size: clamp(17px, 4.2vw, 20px);
+  }
+
+  .intro .interaction-hint {
+    margin-top: clamp(14px, 2.4vh, 22px);
+    margin-bottom: 0;
+    font-size: clamp(10px, 2.5vw, 11px);
+    justify-content: center;
+  }
+  .intro .micro-note {
+    margin-top: clamp(10px, 1.6vh, 16px);
+    font-size: clamp(9px, 2.4vw, 11px);
+    justify-content: center;
+  }
+
+  /* 引导固定在第一屏底部，不参与内容挤占 */
+  .scroll-guide {
+    display: flex;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: clamp(8px, 1.8vh, 18px);
+    margin: 0;
+    padding: 0;
+    height: auto;
+    min-height: 44px;
+    flex-shrink: 0;
+  }
+
+  /* Visual becomes the second "page" – full width, no right strip */
+  .visual {
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    height: auto;
+    min-height: clamp(420px, 110vw, 580px);
+    margin-top: 8px;
+    margin-bottom: 20px;
+    overflow: visible;
+    position: relative;
+    left: 0;
+    right: 0;
+  }
+
+  .card-front {
+    width: clamp(240px, 62vw, 300px);
+    max-width: 78%;
+  }
+  .card-back {
+    width: clamp(215px, 55vw, 270px);
+    max-width: 70%;
+    height: clamp(280px, 75vw, 360px);
+  }
+
+  .note-one { right: 2%; top: 14%; }
+  .note-two { left: 2%; bottom: 12%; }
+
+  body, html {
+    overflow-x: hidden;
+  }
+  .hero, .visual, .intro {
+    max-width: 100vw;
+  }
+}
+
+@media (max-width: 480px) {
+  .intro {
+    min-height: calc(100svh - 70px);
+    min-height: calc(100dvh - 70px);
+    padding: clamp(12px, 2.5vh, 24px) 0 clamp(52px, 8.5vh, 68px);
+  }
+  .intro h1 {
+    font-size: clamp(40px, 10.2vw, 54px);
+    letter-spacing: 0;
+  }
+  .intro .lead {
+    font-size: clamp(17px, 4.6vw, 21px);
+  }
+  .intro .description {
+    font-size: clamp(12px, 3.3vw, 13px);
+    line-height: 1.95;
+  }
+  .intro .enter-button {
+    padding: 16px 18px;
+    font-size: 14px;
+  }
+  .scroll-guide {
+    min-height: 42px;
+    bottom: clamp(6px, 1.5vh, 14px);
+  }
+  .music-toggle {
+    width: 36px;
+    height: 30px;
+  }
+  .music-icon {
+    font-size: 13px;
+  }
+  .top-actions {
+    gap: 6px;
+  }
+  .visual {
+    min-height: 400px;
+  }
+  .card-front {
+    width: 62%;
+    max-width: 250px;
+  }
+  .card-back {
+    width: 55%;
+    max-width: 220px;
+    height: 290px;
+  }
+}
+
+/* 矮屏手机：略收紧间距，保证一屏能放下 */
+@media (max-width: 760px) and (max-height: 680px) {
+  .intro {
+    justify-content: flex-start;
+    padding-top: clamp(10px, 2vh, 18px);
+    padding-bottom: clamp(48px, 8vh, 60px);
+  }
+  .intro .overline { margin: 12px 0 6px; }
+  .intro .lead { margin: 12px 0 6px; }
+  .intro .description { margin-bottom: 14px; }
+  .intro .interaction-hint { margin-top: 12px; }
+  .intro .micro-note { margin-top: 8px; }
+  .intro .enter-button { padding: 14px 16px; font-size: 13px; }
+}
+
+@media (max-width: 760px) and (max-height: 560px) {
+  .intro .description { display: none; } /* 极矮屏隐藏次要描述，保主信息 */
+  .intro .micro-note { display: none; }
+  .intro .interaction-hint { margin-top: 10px; }
+}
+
+@supports (height: 100svh) {
+  @media (max-width: 760px) {
+    .intro { min-height: calc(100svh - 76px); }
+  }
+  @media (max-width: 480px) {
+    .intro { min-height: calc(100svh - 70px); }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-ripple,
+  .scroll-arrow,
+  .music-toggle.is-playing .music-icon {
+    animation: none !important;
+  }
+}
+
+
+/* ===== V9: larger mobile type + roomier cards + about page ===== */
+@media (max-width: 760px) {
+  /* First page: slightly larger type */
+  .intro .eyebrow {
+    font-size: clamp(10px, 2.6vw, 12px) !important;
+  }
+  .intro .overline {
+    font-size: clamp(14px, 3.6vw, 16px) !important;
+  }
+  .intro h1 {
+    font-size: clamp(46px, 10vw, 72px) !important;
+    line-height: 1.3 !important;
+  }
+  .intro .lead {
+    font-size: clamp(19px, 4.8vw, 25px) !important;
+  }
+  .intro .description {
+    font-size: clamp(13px, 3.5vw, 15px) !important;
+    line-height: 2.05 !important;
+  }
+  .intro .enter-button {
+    font-size: clamp(14px, 3.8vw, 16px) !important;
+    padding: clamp(16px, 2.8vh, 20px) clamp(18px, 4.5vw, 24px) !important;
+  }
+  .intro .interaction-hint,
+  .intro .micro-note {
+    font-size: clamp(11px, 2.8vw, 12px) !important;
+  }
+
+  /* Second page cards: less crowded, readable type */
+  .visual {
+    min-height: clamp(480px, 125vw, 640px) !important;
+    padding: 12px 0 24px;
+  }
+  .card-front {
+    width: clamp(260px, 72vw, 340px) !important;
+    max-width: 88% !important;
+    padding: 12px !important;
+  }
+  .card-back {
+    width: clamp(235px, 64vw, 300px) !important;
+    max-width: 80% !important;
+    height: clamp(320px, 82vw, 400px) !important;
+    padding: 12px !important;
+  }
+  .photo-placeholder {
+    height: clamp(230px, 58vw, 300px) !important;
+  }
+  .card-quote {
+    font-size: clamp(12px, 3.4vw, 14px) !important;
+    line-height: 1.85 !important;
+    padding: 14px 6px 12px !important;
+  }
+  .card-meta {
+    font-size: clamp(9px, 2.4vw, 11px) !important;
+    padding-top: 10px !important;
+  }
+  .card-topline,
+  .card-bottom {
+    font-size: clamp(9px, 2.3vw, 11px) !important;
+  }
+  .scribble {
+    font-size: clamp(24px, 6.5vw, 32px) !important;
+    line-height: 1.65 !important;
+  }
+  .floating-note {
+    padding: 11px 13px !important;
+    font-size: clamp(11px, 3vw, 13px) !important;
+    gap: 8px !important;
+  }
+  .note-star { font-size: clamp(18px, 5vw, 22px) !important; }
+  .note-number { font-size: clamp(26px, 7vw, 32px) !important; }
+  .visual-caption {
+    font-size: clamp(8px, 2.2vw, 10px) !important;
+    letter-spacing: 0.12em !important;
+  }
+  .note-one { top: 12%; right: 1%; }
+  .note-two { bottom: 10%; left: 1%; }
+
+  /* About page mobile type */
+  .about-wrap {
+    padding: 48px 6vw 48px !important;
+  }
+  .about-title {
+    font-size: clamp(48px, 11vw, 64px) !important;
+  }
+  .about-subtitle {
+    font-size: clamp(15px, 3.8vw, 17px) !important;
+    margin-bottom: 28px !important;
+  }
+  .about-copy {
+    font-size: clamp(14px, 3.8vw, 16px) !important;
+    line-height: 2.1 !important;
+  }
+  .about-copy .dropcap {
+    font-size: clamp(15px, 4vw, 17px) !important;
+  }
+  .about-copy .dropcap:first-letter {
+    font-size: clamp(36px, 9vw, 42px) !important;
+  }
+  .about-signoff {
+    font-size: clamp(13px, 3.5vw, 15px) !important;
+  }
+  .about-side {
+    min-height: 300px !important;
+    padding: 22px !important;
+  }
+  .side-number {
+    font-size: clamp(72px, 18vw, 96px) !important;
+  }
+  .side-quote {
+    font-size: clamp(18px, 5vw, 22px) !important;
+  }
+  .side-label {
+    font-size: 9px !important;
+  }
+  .enter-button.compact {
+    font-size: 13px !important;
+    padding: 13px 16px !important;
+  }
+  .back-link {
+    font-size: 14px !important;
+  }
+  .site-footer {
+    font-size: clamp(8px, 2.2vw, 10px) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .intro h1 {
+    font-size: clamp(42px, 10.5vw, 56px) !important;
+  }
+  .intro .lead {
+    font-size: clamp(18px, 4.8vw, 22px) !important;
+  }
+  .intro .description {
+    font-size: clamp(13px, 3.6vw, 14px) !important;
+  }
+  .intro .enter-button {
+    font-size: 14px !important;
+    padding: 16px 18px !important;
+  }
+
+  .visual {
+    min-height: 500px !important;
+  }
+  .card-front {
+    width: 78% !important;
+    max-width: 300px !important;
+  }
+  .card-back {
+    width: 70% !important;
+    max-width: 270px !important;
+    height: 340px !important;
+  }
+  .photo-placeholder {
+    height: 240px !important;
+  }
+  .card-quote {
+    font-size: 13px !important;
+  }
+  .scribble {
+    font-size: 26px !important;
+  }
+  .floating-note {
+    font-size: 12px !important;
+  }
+
+  .about-title {
+    font-size: clamp(44px, 12vw, 56px) !important;
+  }
+  .about-copy {
+    font-size: 14px !important;
+  }
+  .side-quote {
+    font-size: 19px !important;
+  }
+
+  .music-toggle {
+    width: 36px;
+    height: 30px;
+  }
+  .music-icon {
+    font-size: 13px;
+  }
+  .music-panel {
+    min-width: 168px;
+    right: -8px;
+  }
+  .music-track {
+    font-size: 15px;
+    padding: 12px;
+  }
+  .music-mute-btn {
+    font-size: 14px;
+    padding: 12px;
+  }
+}
+
+
+/* V9.1: top actions with 原版页面 — keep glass chips readable on narrow screens */
+@media (max-width: 480px) {
+  .top-actions {
+    gap: 5px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+  .nav-link {
+    padding: 7px 9px;
+    font-size: 10px;
+  }
+  .nav-link span {
+    margin-left: 4px;
+  }
+}

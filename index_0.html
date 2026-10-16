@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f8f6ef">
+<title>写给我们的十八岁 · 青春存档</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600&display=swap');
+:root{--paper:#f8f6ef;--ink:#293a34;--muted:#7a867e;--green:#6e8e79;--mint:#dfeae0;--yellow:#f2dfa0;--rose:#e9c9be;--blue:#e5edf9;--white:#fffefa;--line:#e5e4da}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;background:var(--paper);color:var(--ink);font-family:"Noto Sans SC",system-ui,sans-serif;line-height:1.85}
+a{color:inherit;text-decoration:none}button{font:inherit}.nav{height:70px;display:flex;align-items:center;justify-content:space-between;padding:0 7vw;border-bottom:1px solid var(--line);background:#f8f6efeF;position:sticky;top:0;z-index:10;backdrop-filter:blur(12px)}.brand{font:700 17px "Noto Serif SC",serif;letter-spacing:.1em}.brand small{display:block;font:10px "Noto Sans SC";letter-spacing:.2em;color:var(--muted);margin-top:-5px}.navlinks{display:flex;gap:25px;font-size:13px;color:#68776e}.navlinks a:hover{color:#315c48}
+.hero{max-width:1300px;margin:auto;min-height:630px;padding:75px 7vw;display:grid;grid-template-columns:1fr .95fr;align-items:center;gap:5vw}.eyebrow{font-size:11px;letter-spacing:.24em;color:var(--green);font-weight:600}.eyebrow:before{content:"";display:inline-block;width:30px;height:1px;background:var(--green);vertical-align:middle;margin-right:12px}h1{font:600 clamp(43px,6vw,76px)/1.3 "Noto Serif SC",serif;letter-spacing:.04em;margin:20px 0}h1 em{font-style:normal;color:var(--green);position:relative}h1 em:after{content:"";position:absolute;z-index:-1;left:0;right:0;bottom:4px;height:12px;background:var(--yellow)}.hero p{max-width:430px;color:#718077;font-size:15px;line-height:2.1}.meta{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:28px;font-size:12px;color:var(--muted)}.pill{border:1px solid #d5ded3;padding:5px 13px;border-radius:99px;color:#587563}
+.collage{height:410px;position:relative}.polaroid{position:absolute;background:white;padding:9px 9px 32px;box-shadow:0 16px 38px #33463b18}.polaroid .scene{height:100%;min-height:150px}.big-photo{width:68%;height:82%;right:4%;top:2%;transform:rotate(3deg)}.small-photo{width:45%;height:43%;left:1%;bottom:2%;transform:rotate(-7deg)}.scene{display:flex;align-items:center;justify-content:center;text-align:center;background:linear-gradient(145deg,#d9e7db,#f0e8d1);color:#62806e;font-family:"Noto Serif SC",serif}.scene b{display:block;font-size:35px;font-weight:500}.scene small{font:10px "Noto Sans SC";letter-spacing:.15em}.tape{position:absolute;right:0;bottom:4%;background:var(--yellow);padding:10px 18px;font:22px "Ma Shan Zheng",cursive;transform:rotate(5deg);box-shadow:0 6px 15px #0001}
+.section{max-width:1200px;margin:auto;padding:78px 7vw}.section-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:32px}.kicker{font-size:11px;letter-spacing:.22em;color:var(--green)}h2{font:600 clamp(29px,4vw,43px)/1.4 "Noto Serif SC",serif;margin:7px 0 0}.section-head p{max-width:350px;font-size:13px;color:var(--muted);margin:0}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{background:var(--white);padding:12px 12px 21px;box-shadow:0 8px 25px #263a2e08;transition:.25s}.card:hover{transform:translateY(-4px)}.card .scene{height:185px}.tag{display:inline-block;color:#68846f;font-size:11px;letter-spacing:.1em;margin:15px 0 5px}.card h3{font:600 19px "Noto Serif SC",serif;margin:0 0 5px}.card p{font-size:13px;color:#7a857d;margin:0}
+.quote-band{padding:65px 8vw;text-align:center;background:#e7eee5}.quote-band .quote{font:clamp(23px,3.5vw,38px)/1.8 "Noto Serif SC",serif;max-width:850px;margin:0 auto}.quote-band small{display:block;margin-top:15px;color:#728176;letter-spacing:.15em;font-size:11px}
+.topic-list{display:grid;gap:18px}.topic{display:grid;grid-template-columns:90px 1fr;gap:20px;padding:26px 28px;background:var(--white);border:1px solid #eeece3;border-radius:4px}.qnum{font:italic 38px Georgia,serif;color:#9bb4a0}.topic h3{font:600 21px "Noto Serif SC",serif;margin:0 0 10px}.topic .hint{font-size:12px;color:var(--green);margin-bottom:12px}.answer{color:#4e5b54;font-size:14px;line-height:2}.answer p{margin:8px 0}.answer blockquote{margin:14px 0;padding:10px 17px;border-left:3px solid #d4dfd2;background:#f5f7f1;color:#66756a}.answer img{max-width:100%;height:auto;border-radius:3px}.answer ul{padding-left:1.3em}.highlight{background:linear-gradient(transparent 60%,#f3e6b3 60%)}
+.reply{background:#f8efe5;border:1px solid #ecd8bd;border-radius:8px;padding:24px 28px}.reply h3{font:600 22px "Noto Serif SC",serif;margin:0 0 10px}.reply p{margin:8px 0}.footer{text-align:center;padding:50px 20px 65px;color:#879087;font-size:12px}.footer .hand{font:25px "Ma Shan Zheng",cursive;color:#698573;margin-bottom:5px}.topbtn{position:fixed;bottom:22px;right:20px;border:1px solid #dce3d9;background:#fffefa;color:#506b58;border-radius:99px;padding:9px 14px;box-shadow:0 5px 20px #23362b12;cursor:pointer}
+@media(max-width:760px){.nav{height:62px;padding:0 5vw}.navlinks{gap:13px;font-size:11px}.navlinks a:nth-child(2){display:none}.hero{grid-template-columns:1fr;padding:58px 6vw 30px;gap:25px}.hero p{font-size:14px}.collage{height:330px}.big-photo{width:65%;height:82%}.section{padding:55px 6vw}.section-head{display:block}.section-head p{margin-top:12px}.cards{grid-template-columns:1fr}.card .scene{height:210px}.topic{grid-template-columns:48px 1fr;gap:10px;padding:20px 16px}.qnum{font-size:28px}.topic h3{font-size:18px}.answer{font-size:14px}.quote-band{padding:50px 7vw}.reply{padding:20px}}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a class="brand" href="#home">青春存档<small>OUR HIGH SCHOOL YEARS</small></a>
+  <div class="navlinks"><a href="#moments">那些年</a><a href="#questions">回忆问答</a><a href="#letter">写在最后</a><a href="index.html">进入新版</a></div>
+</nav>
+<header class="hero" id="home">
+  <div>
+    <div class="eyebrow">CLASS MEMORY · 2026</div>
+    <h1>写给我们的<br><em>十八岁</em></h1>
+    <p>把晚自习的灯光、操场上的风、课桌里的纸条，还有那些没来得及说出口的话，认真地收藏起来。<br>以后翻开时，希望我们仍然会笑。</p>
+    <div class="meta"><span class="pill">毕业纪念特辑</span><span>某年夏天 · 我们毕业了</span></div>
+  </div>
+  <div class="collage" aria-label="回忆照片拼贴示意">
+    <div class="polaroid big-photo"><div class="scene"><div><b>夏日晴空</b><small>THE DAYS WE SHARED</small></div></div></div>
+    <div class="polaroid small-photo"><div class="scene" style="background:linear-gradient(145deg,#eee0c7,#d5e4d7)"><div><b>同桌的你</b><small>FRIENDS · FOREVER</small></div></div></div>
+    <div class="tape">那些闪闪发光的日子 ✦</div>
+  </div>
+</header>
+
+<section class="section" id="moments">
+  <div class="section-head"><div><div class="kicker">A FEW FRAGMENTS</div><h2>把青春，折成几页</h2></div><p>这里可以放班级合照、运动会、毕业照，也可以只放一张普通得不能再普通的课桌。</p></div>
+  <div class="cards">
+    <article class="card"><div class="scene"><div><b>01</b><small>THE CLASSROOM</small></div></div><span class="tag">教室日常</span><h3>窗边的最后一排</h3><p>阳光落在试卷上，粉笔灰慢慢飘。那时觉得平常的日子，后来都成了珍藏。</p></article>
+    <article class="card"><div class="scene" style="background:linear-gradient(145deg,#e8dfc7,#d7e7d9)"><div><b>02</b><small>SPORTS DAY</small></div></div><span class="tag">热烈时刻</span><h3>操场上的风很自由</h3><p>有人冲过终点，有人在旁边喊到破音。名次会被忘记，但那天的欢呼不会。</p></article>
+    <article class="card"><div class="scene" style="background:linear-gradient(145deg,#d8e3ec,#f2e4cb)"><div><b>03</b><small>GRADUATION</small></div></div><span class="tag">毕业那天</span><h3>合照里每个人都在笑</h3><p>我们说着“以后常联系”，把不舍藏进玩笑里。快门响起，青春有了一个坐标。</p></article>
+  </div>
+</section>
+
+<div class="quote-band"><p class="quote">“我们当时并不知道，那些普通的日子，后来会成为最想回去的地方。”</p><small>— 写给每一个认真生活过的我们</small></div>
+
+<section class="section" id="questions">
+  <div class="section-head"><div><div class="kicker">QUESTIONS & ANSWERS</div><h2>如果回忆有声音</h2></div><p>每个问题都是一个小小的时间胶囊。示例内容可以替换成同学们的文字、图片、引用或列表。</p></div>
+  <div class="topic-list">
+    <article class="topic"><div class="qnum">Q1</div><div><h3>第一次走进这所学校，最大的感受是什么？</h3><div class="hint">初见 · 那一天的心情</div><div class="answer"><p>第一次走进校门时，觉得教学楼好高，走廊好长，未来也好远。那时还不认识身边的人，没想到后来会和他们一起度过这么多重要的日子。</p><p>如果能对刚入学的自己说一句话，大概是：<span class="highlight">别紧张，慢慢来，你会在这里遇见很多很好的人。</span></p></div></div></article>
+    <article class="topic"><div class="qnum">Q2</div><div><h3>离开高中以后，最深的变化和感受是什么？</h3><div class="hint">成长 · 新生活与旧时光</div><div class="answer"><p>大学的生活有了更多自由，也有了需要自己承担的选择。走在陌生城市的街道上，有时会突然想起高中放学时那条熟悉的路。</p><blockquote>原来成长不是不再怀念，而是带着怀念，继续向前走。</blockquote></div></div></article>
+    <article class="topic"><div class="qnum">Q3</div><div><h3>请投出你对高中生活印象最深刻的一幕！</h3><div class="hint">名场面 · 班级共同记忆</div><div class="answer"><p>示例回答：运动会接力赛最后一棒，全班站在跑道旁边一起喊。那一刻风很大，声音很乱，但每个人都在为同一个人加油。</p><p>也许你记得的是一次晚自习、一场大雨，或者某个同学讲过的冷笑话。小事也值得被记住。</p></div></div></article>
+    <article class="topic"><div class="qnum">Q4</div><div><h3>你觉得高中最幸福的瞬间是哪一个？</h3><div class="hint">小确幸 · 细碎而闪亮</div><div class="answer"><p>是考试结束后走出考场的那阵风，是午休时同桌悄悄递来的零食，也是晚自习下课后和朋友并肩走过的那段路。幸福有时很小，小到当时甚至没有察觉。</p></div></div></article>
+    <article class="topic"><div class="qnum">Q5</div><div><h3>说一件你在高中做过的“大心脏”行为？</h3><div class="hint">勇气 · 青春限定的勇敢</div><div class="answer"><p>示例回答：明明紧张得手心冒汗，还是报名参加了演讲比赛。结果没有想象中完美，但站上讲台的那一刻，我知道自己已经往前走了一小步。</p></div></div></article>
+    <article class="topic"><div class="qnum">Q6</div><div><h3>学校食堂 or 校外食堂？你的红黑榜是？</h3><div class="hint">美食 · 一口吃回那几年</div><div class="answer"><p>红榜：窗口阿姨手不抖的时候、冬天热腾腾的汤、和朋友拼桌吃饭的十分钟。</p><p>黑榜：铃声响了还没打到饭，以及每次都说“这次一定不点辣”但最后还是点了辣。</p></div></div></article>
+    <article class="topic"><div class="qnum">Q7</div><div><h3>投出你的爱师，并说说哪件事让你记到现在。</h3><div class="hint">感谢 · 那些认真教过我们的人</div><div class="answer"><p>谢谢老师在我们迷茫时耐心讲解，在我们犯错时认真提醒，也在我们自己都不相信自己的时候，依然愿意多给一点时间。</p><p>愿多年以后再见面，我们可以笑着说一声：老师，好久不见。</p></div></div></article>
+    <article class="topic"><div class="qnum">Q8</div><div><h3>高考期间，有什么印象深刻的碎片吗？</h3><div class="hint">六月 · 倒计时归零以后</div><div class="answer"><p>走进考场前最后一次检查文具，考完最后一科时大家互相确认答案，校门口等候的家人，还有那句“终于结束了”。紧张、轻松、茫然和开心，全都挤在同一个下午。</p></div></div></article>
+    <article class="topic"><div class="qnum">Q9</div><div><h3>如果时间拨回高中，你最想改变什么？</h3><div class="hint">如果可以 · 没有标准答案</div><div class="answer"><p>也许会更勇敢一点，更主动地和朋友拍照；也许会少一点对未来的焦虑，多看看窗外的树。又或许，什么都不改——因为正是那些不够完美的日子，组成了现在的我们。</p></div></div></article>
+    <article class="topic"><div class="qnum">Q10</div><div><h3>对朋友，或对高中时的自己，说一句未完之言。</h3><div class="hint">留给未来 · 写给某个人</div><div class="answer"><p>给那时的自己：你已经很努力了，不必每一步都走得漂亮。<br>给我的朋友们：愿我们去往不同的地方，也依然保有分享生活的热情。下次见面，记得把故事讲给我听。</p></div></div></article>
+  </div>
+</section>
+
+<section class="section" id="letter">
+  <div class="section-head"><div><div class="kicker">A LETTER TO US</div><h2>写在最后</h2></div></div>
+  <div class="reply"><h3>亲爱的同学们：</h3><p>恭喜我们，完成了人生中一段很重要的旅程。</p><p>谢谢你曾经出现在我的青春里。谢谢那些一起赶过的作业、一起经历的考试、一起分享的秘密，还有许多看似平常却再也无法复制的瞬间。</p><p>未来的我们会去往不同的城市，遇见不同的人，拥有新的生活。但希望当我们偶然想起这段岁月时，心里依然有一块柔软的地方，留给那个夏天，留给这间教室，留给我们。</p><p style="text-align:right;font-family:'Ma Shan Zheng',cursive;font-size:22px;color:#68836e">山水一程，仍盼重逢。</p></div>
+</section>
+<footer class="footer"><div class="hand">愿我们前程似锦，也常念旧时。</div><div>青春存档 · 班级回忆录 DEMO</div><div style="margin-top:6px">此页面目前为示例内容，等待你们亲手填入真正的故事。</div></footer>
+<button class="topbtn" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="回到顶部">↑ 回到顶部</button>
+</body></html>
